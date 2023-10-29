@@ -1,0 +1,82 @@
+﻿
+
+<style>
+    .nav-text {
+        margin: 10px;
+        display: inline-block;
+        color: #000000;
+    }
+
+        .nav-text:before {
+            content: '';
+            height: 2px;
+            background: #0026ff;
+            display: block;
+            transition: width 0.3s ease-in-out;
+            margin: 0 auto;
+        }
+
+        .nav-text:before {
+            width: 150%;
+        }
+
+        .nav-text:after {
+            width: 0;
+        }
+
+        .nav-text:hover:before {
+            width: 0;
+        }
+
+        .nav-text:hover:after {
+            width: 100%;
+        }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="https://ngaydautien.vn/wp-content/uploads/files/images/blog/Sep%202017/7-cau-hoi-nen-hoi-khi-kham-benh-tang-huyet-ap.jpg" alt="..." class="img-fluid h-75">
+        </div>
+        <div class="col-lg-6">
+            <br />
+            <div class="row">
+
+                <div class="col text-end ">
+                    <!-- Nội dung ở giữa, cột 2 -->
+
+                    <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-primary " style="border-radius:0px">Đăng Ký</a>
+                    <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-primary" style="border-radius:0px">Đăng Nhập</a>
+
+
+
+                </div>
+
+                <br>
+            </div>
+            <!-- Dòng 2 -->
+            <div class="row">
+                <div class="col-12">
+                    <!-- Nội dung ở giữa, full width -->
+                    <ul class="nav nav-inline">
+                        <li class="nav-item nav-text"><a class="nav-link text-center" style="color:black" href="#section1">Trang Chủ</a></li>
+                        <li class="nav-item nav-text"><a class="nav-link" style="color:black" href="#section2">Giới Thiệu</a></li>
+                        <li class="nav-item nav-text"><a class="nav-link" style="color:black" href="#section3">Quy Trình</a></li>
+                        <li class="nav-item nav-text"><a class="nav-link" style="color:black" href="#section3">Hướng Dẫn</a></li>
+                        <li class="nav-item nav-text"><a class="nav-link" style="color:black" href="#section3">Thắc Mắc</a></li>
+                        <li class="nav-item nav-text"><a class="nav-link" style="color:black" href="#section3">Liên Hệ</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <img src="https://bo-api.medpro.com.vn/static/images/medpro/web/small_medpro.png" alt="..." class="img-fluid h-50">
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
