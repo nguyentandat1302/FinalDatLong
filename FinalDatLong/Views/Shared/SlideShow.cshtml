@@ -1,0 +1,93 @@
+﻿
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+<style>
+    #SlideShow img {
+        width: 1300px;
+        max-width: 100vw;
+        height: 700px;
+        object-fit: cover;
+    }
+
+    #SlideShow .btn {
+        height: 50px;
+        width: 220px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-color: green;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s;
+        font-size: 18px
+    }
+
+        #SlideShow .btn:hover {
+            color: black;
+            z-index: 999
+        }
+
+        #SlideShow .btn::before {
+            content: "";
+            position: absolute;
+            height: 0%;
+            width: 100%;
+            background-color: lightgreen;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.5s
+        }
+
+        #SlideShow .btn:hover::before {
+            height: 100%
+        }
+    }
+</style>
+<div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div id="SlideShow" class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div id="SlideShow" class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <img src="https://img.freepik.com/free-vector/flat-design-medical-facebook-cover_23-2149122136.jpg?w=1380&t=st=1698657114~exp=1698657714~hmac=c2948e43a328fdcc3539f50d4bf8e3af5caa4796748766cb8afea41b95cfd866" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <a href="#" class="btn"><i class="bi bi-telephone-plus-fill"></i> Hotline</a>
+                <a href="#" class="btn"><i class="bi bi-geo-alt"></i> FindHospital</a>
+                <a href="#" class="btn"><i class="bi bi-chat-right-heart-fill"></i> Get free consultation</a>
+                <a href="#" class="btn"><i class="bi bi-stickies"></i> Health care guide</a>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://img.freepik.com/free-vector/flat-design-medical-facebook-template_23-2149122137.jpg?t=st=1698656970~exp=1698657570~hmac=9954fb50ea84edd0f90fca45fc14ce4b19bfecbbc4b3b15f751b7f33c2f68467" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <a class="btn">Hotline</a>
+                <a class="btn">FindHospital</a>
+                <a class="btn">Get free consultation</a>
+                <a class="btn">Health care guide</a>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://img.freepik.com/free-vector/flat-design-medical-sale-banner_23-2149122142.jpg?t=st=1698656970~exp=1698657570~hmac=1b1fcf3806b4914cbd77d5a488968ebcc7e6f81af5c41128e56a427d982610ce" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <a class="btn">Hotline</a>
+                <a class="btn">FindHospital</a>
+                <a class="btn">Get free consultation</a>
+                <a class="btn">Health care guide</a>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

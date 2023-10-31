@@ -18,17 +18,33 @@
         @Html.Action("Navbar", "Booking")
 
     </div>
+    <br />
+    <div class="row">
+        @Html.Action("SlideShow", "Booking")
+    </div>
+    <br />
+    <div class="row">
+        @Html.Action("Card", "Booking")
+    </div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-       
+    <div class="row">
+        @Html.Action("Contact", "Booking")
     </div>
     <div class="row">
-        @Html.Action("Footer","Booking")
+        @Html.Action("Video", "Booking")
     </div>
 
-  
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+
+    </div>
+    <div class="row">
+        @Html.Action("Footer", "Booking")
+    </div>
+
+
 </body>
 
 </html>

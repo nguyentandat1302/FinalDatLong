@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
 }
 
 <style type="text/css">
@@ -25,7 +26,7 @@
         .frame {
             height: 575px;
             width: 430px;
-            background: linear-gradient( rgba(35,43,85,0.75), rgba(35,43,85,0.95)), url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1564049481/bg-clouds.jpg) no-repeat center center;
+            background: linear-gradient( rgb(35,43,85,0.95), rgba(35,43,85,0.95)), url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1564049481/bg-clouds.jpg) no-repeat center center;
             background-size: cover;
             margin-left: auto;
             margin-right: auto;
@@ -96,7 +97,7 @@
 
         .signup-inactive a {
             cursor: pointer;
-            color: rgba(255,255,255,.3);
+            color: rgb(255, 255, 255);
             text-decoration: none;
             transition: all .25s ease;
         }
@@ -515,7 +516,7 @@
         <div class="nav">
             <ul class="links">
                 <li class="signin-active"><a href="#" class="btn">Đăng Ký</a></li>
-                <li class="signup-inactive"><a href="@Url.Action("DangNhap","User")" class="btn">Đăng Nhập </a></li>
+                <li class="signup-inactive"><a href="@Url.Action("DangNhap","User")" class="btn btn-outline-primary">Đăng Nhập </a></li>
             </ul>
         </div>
         <div ng-app ng-init="checked = false">
@@ -528,10 +529,10 @@
                 <input class="form-styling" type="text" name="password" placeholder="" />
                 <label for="confirmpassword">Confirm password</label>
                 <input class="form-styling" type="text" name="confirmpassword" placeholder="" />
-                <a ng-click="checked = !checked" class="btn-signup">Sign Up</a>
+                <a ng-click="checked = !checked" class="btn btn-outline-primary">Sign Up</a>
             </form>
 
-            
+
             <div class="success">
                 <svg width="270" height="270" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 60 60" id="check" ng-class="checked ? 'checked' : ''">
@@ -544,7 +545,7 @@
             </div>
         </div>
 
-        
+
 
         <div>
             <div class="cover-photo"></div>
@@ -567,4 +568,5 @@
     </svg>
     </a>
 </div>
+
 

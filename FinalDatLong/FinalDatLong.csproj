@@ -184,8 +184,12 @@
     <Content Include="Views\Shared\LayoutNavbar.cshtml" />
     <Content Include="Views\Shared\Navbar.cshtml" />
     <Content Include="Views\Shared\NavbarDangNhap.cshtml" />
-    <Content Include="Views\User\DangKy.cshtml" />
+    <Content Include="Views\Shared\Contact.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
+    <Content Include="Views\User\DangKy.cshtml" />
+    <Content Include="Views\Shared\SlideShow.cshtml" />
+    <Content Include="Views\Shared\Video.cshtml" />
+    <Content Include="Views\Shared\Card.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

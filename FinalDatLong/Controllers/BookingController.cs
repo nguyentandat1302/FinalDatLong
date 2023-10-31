@@ -26,5 +26,25 @@ namespace FinalDatLong.Controllers
         {
             return View();
         }
+        public ActionResult Contact()
+        {
+            return PartialView();
+        }
+        public ActionResult NavbarDangNhap()
+        {
+            return PartialView();
+        }
+        public ActionResult SlideShow()
+        {
+            return PartialView();
+        }
+        public ActionResult Video()
+        {
+            return PartialView();
+        }
+        public ActionResult Card()
+        {
+            return PartialView();
+        }
     }
 }
