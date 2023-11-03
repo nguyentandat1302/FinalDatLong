@@ -1,4 +1,5 @@
-﻿
+﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 <style>
     .nav-text {
         margin: 10px;
@@ -30,6 +31,42 @@
         .nav-text:hover:after {
             width: 100%;
         }
+
+
+
+
+    h3 {
+        color: #23A455;
+    }
+
+    li {
+        margin: 10% 0 0 0
+    }
+
+    .btn {
+        border: none; /* Remove borders */
+        color: white; /* Add a text color */
+        padding: 14px 28px; /* Add some padding */
+        cursor: pointer; /* Add a pointer cursor on mouse-over */
+    }
+
+    .btnHotline {
+        border: none; /* Remove borders */
+        color: white;
+        width: 100%;
+        height: 10%;
+    }
+
+    .success {
+        background-color: #23A455;
+    }
+        /* Green */
+        .success:hover {
+            background-color: #b6ff00;
+        }
+
+
+
 </style>
 <div class="container">
     <div class="row">
@@ -42,11 +79,11 @@
 
                 <div class="col text-end ">
                     <!-- Nội dung ở giữa, cột 2 -->
-                    
+
                     <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success " style="border-radius:0px">Đăng Ký</a>
                     <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Đăng Nhập</a>
-                  
-                 
+
+
 
                 </div>
 
@@ -69,14 +106,128 @@
             </div>
         </div>
         <div class="col-lg-3">
-            <img src="https://sonqb.com/media/2021/07/dich-vu-booking-pr-bao-sonqb.jpg" alt="..." class="img-fluid h-100">
+            <a href="https://sonqb.com/media/2021/07/dich-vu-booking-pr-bao-sonqb.jpg" data-bs-toggle="modal" data-bs-target="#myModal">
+                <img src="https://sonqb.com/media/2021/07/dich-vu-booking-pr-bao-sonqb.jpg" alt="..." class="img-fluid h-100">
+            </a>
+        </div>
+
+     
+            @*The Modal*@
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-dialog-scrollable modal-xxl">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h3 class="modal-title">Booking doctor</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-5">
+                                    <h3>LƯU Ý:</h3>
+
+                                    <ul>
+                                        <li>
+                                            Lịch hẹn chỉ có hiệu lực khi Quý khách được xác nhận chính thức từ Bệnh viện thông qua
+                                            điện thoại hoặc email.
+                                        </li>
+                                        <li>
+                                            Lịch hẹn chỉ có hiệu lực khi Quý khách được xác nhận chính thức từ Bệnh viện thông qua
+                                            điện thoại hoặc email.
+                                        </li>
+                                        <li>
+                                            Lịch hẹn chỉ có hiệu lực khi Quý khách được xác nhận chính thức từ Bệnh viện thông qua
+                                            điện thoại hoặc email.
+                                        </li>
+                                        <li>
+                                            Lịch hẹn chỉ có hiệu lực khi Quý khách được xác nhận chính thức từ Bệnh viện thông qua
+                                            điện thoại hoặc email.
+                                        </li>
+                                    </ul>
+
+                                    <button class="btnHotline success"><i class="bi bi-telephone-plus"></i> Hotline: 1900 555 533</button>
+                                </div>
+                                <div class="col-7">
+                                    <div class="row">
+                                        <h3 class="text-center">ĐẶT LỊCH KHÁM BỆNH</h3>
+                                        <div class="row">
+                                            <a style=" color: #23A455;">
+                                                Bạn muốn đặt hẹn khám cho
+                                            </a>
+                                            <div class="form-check col">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Default radio
+                                                </label>
+                                            </div>
+                                            <div class="form-check col">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Default radio
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">Họ tên</a>
+                                            <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">Số điện thoại</a>
+                                            <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <a style=" color: #23A455">Ngày đặt hẹn</a>
+                                                <input class="form-control" type="date" />
+                                            </div>
+                                            <div class="col">
+                                                <a style=" color: #23A455">Thời gian</a>
+                                                <input class="form-control" type="time" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">Chọn bệnh viện</a>
+                                            <select class="form-select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">Dịch vụ đăng ký</a>
+                                            <select class="form-select">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                            </select>
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">
+                                                Mô tả triệu chứng/lý do khám
+                                            </a>
+                                            <textarea name="mo-ta" rows="4" cols="50"></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align:center; margin: 5% 0 0 0">
+                                                <button class="btn success">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
         </div>
-
-
-
     </div>
-</div>
 
 
