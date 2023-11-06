@@ -1,7 +1,7 @@
 ﻿
-@{
-    ViewBag.Title = "DangNhap";
-    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+@{@model FinalDatLong.Models.UserLogin
+ViewBag.Title = "DangNhap";
+Layout = "~/Views/Shared/LayoutNavbar.cshtml";
 }
 
 
@@ -521,14 +521,26 @@
             </ul>
         </div>
         <div ng-app ng-init="checked = false">
+
             <form class="form-signin" action="" method="post" name="form">
-                <label for="username">Username</label>
-                <input class="form-styling" type="text" name="username" placeholder="" />
-                <label for="password">Password</label>
-                <input class="form-styling" type="text" name="password" placeholder="" />
+
+                <div class="form-outline mb-4">
+                    <label for="username">Username</label>
+                    <input type="text" name="Username" class="form-control form-control-lg" />
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label for="password">Password</label>
+                    <input type="password" name="Password" class="form-control form-control-lg" />
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
                 <input type="checkbox" id="checkbox" />
                 <label for="checkbox"><span class="ui"></span>Keep me signed in</label>
-                <a ng-click="checked = !checked" class="btn-signup">Sign Up</a>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+
+
             </form>
 
             <form class="form-signup" action="" method="post" name="form">

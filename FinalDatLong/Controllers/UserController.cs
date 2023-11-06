@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalDatLong.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,9 +18,34 @@ namespace FinalDatLong.Controllers
         {
             return View();
         }
+        [HttpGet]
         public ActionResult DangNhap()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult DangNhap(UserLogin user)
+        {
+            //if (ModelState.IsValid)
+            //{
+            //    var u = db.KHACHHANG.FirstOrDefault(k => k.Taikhoan == user.Username && k.Matkhau == user.Password);
+            //    if (u != null)
+            //    {
+            //        Session["TaiKhoan"] = u;
+            //        ViewBag.ThongBao = "Đăng Nhập Thành Công";
+            //        return Redirect("~/");
+            //    }
+            //    else
+            //    {
+            //        ModelState.AddModelError("Password", "Error");
+            //    }
+            //}
+            return View();
+        }
+        public ActionResult DangXuat()
+        {
+            Session["TaiKhoan"] = null;
+            return RedirectToAction("Index", "Booking");
         }
     }
 }
