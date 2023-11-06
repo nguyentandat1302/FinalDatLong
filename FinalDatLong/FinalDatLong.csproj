@@ -134,6 +134,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\ListOfMedication.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Partient.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\Treatment.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
