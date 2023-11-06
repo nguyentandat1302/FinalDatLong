@@ -50,5 +50,9 @@ namespace FinalDatLong.Controllers
         {
             return PartialView();
         }
+        public ActionResult PatientProfile()
+        {
+            return PartialView();
+        }
     }
 }
