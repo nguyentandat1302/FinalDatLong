@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ALLController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -209,7 +210,6 @@
     <Content Include="Views\Shared\LayoutNavbar.cshtml" />
     <Content Include="Views\Shared\Navbar.cshtml" />
     <Content Include="Views\Shared\NavbarDangNhap.cshtml" />
-    <Content Include="Views\Shared\Contact.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\Shared\SlideShow.cshtml" />
@@ -217,6 +217,9 @@
     <Content Include="Views\Shared\Card.cshtml" />
     <Content Include="Views\Shared\DoctorProfile.cshtml" />
     <Content Include="Views\Shared\PatientProfile.cshtml" />
+    <Content Include="Views\Shared\Contact.cshtml" />
+    <Content Include="Views\ALL\Contacts.cshtml" />
+    <Content Include="Views\ALL\AboutUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
