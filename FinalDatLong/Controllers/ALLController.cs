@@ -21,5 +21,17 @@ namespace FinalDatLong.Controllers
         {
             return View();
         }
+        public ActionResult Question()
+        {
+            return View();
+        }
+        public ActionResult Service()
+        {
+            return PartialView();
+        }
+        public ActionResult Instruction()
+        {
+            return PartialView();
+        }
     }
 }

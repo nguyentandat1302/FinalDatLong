@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewBag.Title = "Instruction";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+}
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #B3E5FC;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #4caf50;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+        header h1 {
+            margin: 0;
+        }
+
+    footer {
+        max-width: 300%; /* Đặt chiều rộng tối đa cho footer */
+        margin: 0 auto; /* Canh giữa footer trong trang */
+        padding: 10px; /* Thêm khoảng trắng nếu cần */
+        border: 1px solid #ccc; /* Thêm đường viền nếu cần */
+    }
+
+    /* Tùy chỉnh các phần tử trong footer nếu cần */
+    h3, p {
+        margin: 0;
+    }
+
+    .small {
+        font-size: 80%; /* Giảm kích thước chữ của phần có class "small" */
+    }
+
+    section {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        section h2 {
+            color: #333;
+        }
+
+        section p {
+            color: #666;
+        }
+
+    ol {
+        margin: 0;
+        padding: 0;
+        list-style: decimal;
+    }
+
+    .latest-article {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .latest-article h2 {
+            color: #4caf50;
+        }
+
+        .latest-article article {
+            margin-bottom: 20px;
+        }
+
+        .latest-article h3 {
+            color: #4caf50;
+        }
+
+        .latest-article p {
+            color: #666;
+        }
+
+        .latest-article .timestamp {
+            color: #999;
+        }
+
+        .latest-article a {
+            color: #4caf50;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+    .small {
+        font-size: 12px;
+    }
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Đặt Lịch Khám Bệnh Viện Mắt</title>
+</head>
+<body>
+
+    <header>
+        <h1>Đặt Lịch Khám Bệnh Viện Mắt</h1>
+        <p>28-06-2022 14:35:55 by admin</p>
+    </header>
+
+    <section class="guide">
+        <h2>Bước 1: Truy Cập Website Hoặc Tải Ứng Dụng</h2>
+        <p>Để có trải nghiệm sản phẩm tốt nhất, quý khách vui lòng tải và cài đặt ứng dụng theo 2 cách sau đây:</p>
+        <ol>
+            <li>Cách 1: Tìm kiếm từ khóa "Bệnh viện Mắt" (iOS) và Google Play (Android) để tải ứng dụng.</li>
+            <li>Cách 2: Truy cập website <a href="https://benhvienmat.medpro.vn/">https://benhvienmat.medpro.vn/</a></li>
+        </ol>
+    </section>
+
+    <section class="guide">
+        <h2>Bước 2: Hướng Dẫn Đặt Khám</h2>
+        <p>Quy trình đăng ký khám bệnh gồm 5 bước đặt lịch khám:</p>
+        <ol>
+            <li>Bước 1: Chọn đặt lịch khám bệnh</li>
+            <li>Bước 2: Chọn thông tin khám: Chuyên khoa, dịch vụ, ngày khám, giờ khám</li>
+            <li>Bước 3: Nhập thông tin bệnh nhân: Bằng số hồ sơ hoặc tạo mới</li>
+            <li>Bước 4: Xác nhận thông tin và thanh toán</li>
+            <li>Bước 5: Nhận phiếu khám bệnh trực tuyến</li>
+        </ol>
+    </section>
+
+    <section class="guide">
+        <h2>Bước 3: Tiếp Nhận Tại Bệnh Viện</h2>
+        <p>Vui lòng đến quầy tiếp nhận để xác minh thông tin và hướng dẫn vào phòng khám.</p>
+    </section>
+
+    <section class="latest-article">
+        <h2>Bài Viết Mới Nhất</h2>
+        <a href="/benh-vien-mat/chi-tiet-huong-dan/huong-dan-dat-lich-kham-tren-ung-dung-benh-vien-mat"><img class="style_image__X0T6V" src="https://cdn-pkh.longvan.net/prod-partner/4e799eda-a90b-4b36-97cb-b14f0b230f9a-304.jpg" alt="" width="75%"></a>
+        <article>
+            <h3>Thông tin Chi Tiết</h3>
+            <p>Từ dữ liệu tôi đưa ra, hay cho tôi một HTML và CSS, là hướng dẫn sử dụng booking doctor.</p>
+            <p class="timestamp">28-06-2022 14:35:55</p>
+            <a href="#">Xem Chi Tiết</a>
+        </article>
+    </section>
+    <footer>
+        <h3>Liên Hệ</h3>
+        <p>Email: hcmceyehospital@gmail.com</p>
+        <p>Điện thoại: (028).3932.5364</p>
+        <p class="small">Điều khoản dịch vụ | Chính sách bảo mật | Quy định sử dụng</p>
+    </footer>
+
+</body>
+</html>
+
+

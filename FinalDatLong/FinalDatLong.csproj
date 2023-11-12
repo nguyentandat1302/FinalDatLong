@@ -220,6 +220,9 @@
     <Content Include="Views\Shared\Contact.cshtml" />
     <Content Include="Views\ALL\Contacts.cshtml" />
     <Content Include="Views\ALL\AboutUs.cshtml" />
+    <Content Include="Views\ALL\Question.cshtml" />
+    <Content Include="Views\ALL\Service.cshtml" />
+    <Content Include="Views\ALL\Instruction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
