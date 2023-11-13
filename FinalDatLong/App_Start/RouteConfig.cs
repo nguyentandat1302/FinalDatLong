@@ -17,6 +17,7 @@ namespace FinalDatLong
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Booking", action = "Index", id = UrlParameter.Optional }
+                 , namespaces: new[] { "FinalDatLong.Controller" }
             );
         }
     }
