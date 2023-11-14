@@ -64,14 +64,12 @@
         .success:hover {
             background-color: #b6ff00;
         }
+
     .modal-dialog.modal-xxl {
         width: 90%; /* Điều chỉnh chiều rộng theo mong muốn */
         max-width: 80%; /* Điều chỉnh chiều rộng tối đa theo mong muốn */
         height: 90vh; /* Điều chỉnh chiều cao theo mong muốn */
     }
-
-
-
 </style>
 <div class="container">
     <div class="row">
@@ -116,134 +114,127 @@
             </a>
         </div>
 
-     
-            @*The Modal*@
-            <div class="modal fade" id="myModal">
-                <div class="modal-dialog modal-dialog-scrollable modal-xxl">
-                    <div class="modal-content">
 
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <h3 class="modal-title">Booking doctor</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
+        @*The Modal*@
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-dialog-scrollable modal-xxl">
+                <div class="modal-content">
 
-                        <!-- Modal body -->
-                        <div class="modal-body">
-                            <form id="form1">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <h3>LƯU Ý:</h3>
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h3 class="modal-title">Booking doctor</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
 
-                                        <ul>
-                                            <li>
-                                                Lịch hẹn chỉ có hiệu lực khi Quý khách được xác nhận chính thức từ Bệnh viện thông qua
-                                                điện thoại hoặc email.
-                                            </li>
-                                            <li>
-                                                Quý khách sử dụng dịch vụ đặt hẹn trực tuyến, vui lòng đặt hẹn ít nhất 24h trước
-                                                khi đến khám.
-                                            </li>
-                                            <li>
-                                                Quý khách vui lòng cung cấp thông tin chính xác để được hỗ trợ nhanh nhất.
-                                            </li>
-                                            <li>
-                                                Trường hợp khẩn cấp hay có triệu chứng nguy hiểm, vui lòng liên hệ trực tiếp cơ sở y tế để
-                                                kịp thời xử lý.
-                                            </li>
-                                        </ul>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="form1">
+                            <div class="row">
+                                <div class="col-5">
+                                    <h3>Các chuyên khoa</h3>
 
-                                        <button class="btnHotline success"><i class="bi bi-telephone-plus"></i> Hotline: 1900 555 533</button>
-                                    </div>
-                                    <div class="col-7">
+                                    <a style="text-decoration: none" href="#Dakhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 20px 0 7px 0">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/specialties/da-khoa.png" />Đa khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Nhakhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width:60px;height:40px" src="https://cdn-healthcare.hellohealthgroup.com/specialties/nha-khoa.png" />Nha khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Dalieu">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/specialties/da-lieu.png" />Da liễu
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Nhankhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/2022/03/1648192921_623d6d99099d03.94959451.jpg" />Nhãn khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Phukhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/specialties/san-phu-khoa.png" />Phụ khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none;" href="#Trilieuthanhkinhcotsong">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0">
+                                            <img style="width: 60px; height: 40px" src="https://cdn-healthcare.hellohealthgroup.com/2022/01/1643269107_61f24bf31bd9a1.55037235.png" />Trị liệu thần kinh cột sống
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-7">
+                                    <div class="row">
+                                        <h3 class="text-center">ĐẶT LỊCH KHÁM BỆNH</h3>
                                         <div class="row">
-                                            <h3 class="text-center">ĐẶT LỊCH KHÁM BỆNH</h3>
-                                            <div class="row">
-                                                <a style=" color: #23A455;">
-                                                    Bạn muốn đặt hẹn khám cho
-                                                </a>
-                                                <div class="form-check col">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        Người thân
-                                                    </label>
-                                                </div>
-                                                <div class="form-check col">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        Bản thân
-                                                    </label>
-                                                </div>
+                                            <a style=" color: #23A455;">
+                                                Bạn muốn đặt hẹn khám cho
+                                            </a>
+                                            <div class="form-check col">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Người thân
+                                                </label>
                                             </div>
-                                            <div class="row">
-                                                <a style=" color: #23A455">Họ tên</a>
-                                                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                                            <div class="form-check col">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Bản thân
+                                                </label>
                                             </div>
-                                            <div class="row">
-                                                <a style=" color: #23A455">Số điện thoại</a>
-                                                <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">Họ tên</a>
+                                            <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">Số điện thoại</a>
+                                            <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <a style=" color: #23A455">Ngày đặt hẹn</a>
+                                                <input class="form-control" type="date" />
                                             </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a style=" color: #23A455">Ngày đặt hẹn</a>
-                                                    <input class="form-control" type="date" />
-                                                </div>
-                                                <div class="col">
-                                                    <a style=" color: #23A455">Thời gian</a>
-                                                    <input class="form-control" type="time" />
-                                                </div>
+                                            <div class="col">
+                                                <a style=" color: #23A455">Thời gian</a>
+                                                <input class="form-control" type="time" />
                                             </div>
-                                            <div class="row">
-                                                <a style=" color: #23A455">Chọn bệnh viện</a>
-                                                <select class="form-select">
-                                                    <option>Bệnh viện mắt Sài Gòn</option>
-                                                    <option>Bệnh viện Đa khoa Sài Gòn</option>
-                                                    <option>Bệnh viện Nhi Đồng</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="row">
-                                                <a style=" color: #23A455">Dịch vụ đăng ký</a>
-                                                <select class="form-select">
-                                                    <option> </option>
-                                                    <option>Điều trị về mắt</option>
-                                                    <option>Điều trị da liễu</option>
-                                                    <option>Điều trị xương khớp</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="row">
-                                                <a style=" color: #23A455">
-                                                    Mô tả triệu chứng/lý do khám
-                                                </a>
-                                                <textarea name="mo-ta" rows="4" cols="50"></textarea>
-                                            </div>
-                                            <div class="row">
-                                                <div style="text-align:center; margin: 5% 0 0 0">
-                                                    <button class="btn success" onclick="myFunction()">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></button>
-
-                                                    <p id="demo"></p>
-                                                    <script>
-                                                        function myFunction() {
-                                                            document.getElementById("form1").reset();
-                                                            document.getElementById("demo").innerHTML = "Đặt lịch thành công";
-                                                            
-                                                            }
-                                                    </script>
-                                                </div>
+                                        </div>
+                                        <div class="row">
+                                            <a style=" color: #23A455">
+                                                Mô tả triệu chứng/lý do khám
+                                            </a>
+                                            <textarea name="mo-ta" rows="4" cols="50"></textarea>
+                                        </div>
+                                        <div class="row">
+                                            <div style="text-align:center; margin: 5% 0 0 0">
+                                                <button class="btn success" onclick="myFunction()">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></button>
+                                                <p id="demo"></p>
+                                                <script>
+    function myFunction() {
+                                                        var txt;
+                                                        if (confirm("Đặt hẹn thành công!")) {
+                                                            txt = "You pressed OK!";
+                                                        } else {
+                                                            txt = "You pressed Cancel!";
+                                                        }
+                                                        document.getElementById("demo").innerHTML = txt;
+                                                    }
+                                                </script>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
+
+
+
     </div>
-
-
+</div>
