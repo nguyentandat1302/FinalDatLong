@@ -10,12 +10,15 @@ namespace FinalDatLong.Models
     public partial class Feedback
     {
         [Key]
-        [StringLength(20)]
-        public string IDPartient { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int IDFeedback { get; set; }
+
+        public int? IDPatient { get; set; }
 
         [Column("Feedback")]
+        [StringLength(255)]
         public string Feedback1 { get; set; }
 
-        public virtual Partient Partient { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

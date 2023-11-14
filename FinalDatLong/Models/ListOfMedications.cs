@@ -6,15 +6,18 @@ namespace FinalDatLong.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class ListOfMedication
+    public partial class ListOfMedications
     {
         [Key]
-        [StringLength(20)]
-        public string IDTreatment { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int IDListOfMedications { get; set; }
+
+        public int? IDTreatment { get; set; }
 
         [StringLength(255)]
-        public string medicine { get; set; }
+        public string Medicine { get; set; }
 
+        [StringLength(255)]
         public string Description { get; set; }
 
         public virtual Treatment Treatment { get; set; }

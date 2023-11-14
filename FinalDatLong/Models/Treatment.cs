@@ -9,22 +9,28 @@ namespace FinalDatLong.Models
     [Table("Treatment")]
     public partial class Treatment
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Treatment()
+        {
+            ListOfMedications = new HashSet<ListOfMedications>();
+        }
+
         [Key]
-        [StringLength(20)]
-        public string IDTreatment { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int IDTreatment { get; set; }
 
-        [StringLength(20)]
-        public string IDDoctor { get; set; }
+        public int? IDDoctor { get; set; }
 
-        [StringLength(20)]
-        public string IDPartient { get; set; }
+        public int? IDPatient { get; set; }
 
+        [StringLength(255)]
         public string Description { get; set; }
 
         public virtual Doctor Doctor { get; set; }
 
-        public virtual Partient Partient { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ListOfMedications> ListOfMedications { get; set; }
 
-        public virtual ListOfMedication ListOfMedication { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

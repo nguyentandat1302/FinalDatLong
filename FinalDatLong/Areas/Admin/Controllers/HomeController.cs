@@ -27,7 +27,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
         {
             string UserName = f["UserName"];
             string Password = f["Password"];
-            var admin = db.Admins.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
+            var admin = db.Patient.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
             if (admin != null)
             {
                 Session["Admin"] = admin;

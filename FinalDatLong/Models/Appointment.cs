@@ -10,21 +10,17 @@ namespace FinalDatLong.Models
     public partial class Appointment
     {
         [Key]
-        [Column(Order = 0)]
-        [StringLength(20)]
-        public string IDDoctor { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int IDAppointment { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [StringLength(20)]
-        public string IDPartient { get; set; }
+        public int? IDDoctor { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        public DateTime Datetime { get; set; }
+        public int? IDPatient { get; set; }
+
+        public DateTime? Datetime { get; set; }
 
         public virtual Doctor Doctor { get; set; }
 
-        public virtual Partient Partient { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

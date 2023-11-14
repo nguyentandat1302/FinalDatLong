@@ -11,6 +11,7 @@ namespace FinalDatLong.Controllers
     {
         // GET: User
         Model1 db = new Model1();
+        // GET: User
         public ActionResult Index()
         {
             return View();
@@ -22,18 +23,18 @@ namespace FinalDatLong.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult DangKy(Partient Model)
+        public ActionResult DangKy(Patient Model)
         {
             if (ModelState.IsValid)
             {
-                var kh = db.Partients.FirstOrDefault(k => k.UserName == Model.UserName);
+                var kh = db.Patient.FirstOrDefault(k => k.UserName == Model.UserName);
                 if (kh != null)
                 {
                     ModelState.AddModelError("UserName", "Ten tai Khoan ton tai");
                     return View(Model);
                 }
 
-                db.Partients.Add(Model);
+                db.Patient.Add(Model);
                 db.SaveChanges();
                 return View("DangNhap");
 
@@ -53,7 +54,7 @@ namespace FinalDatLong.Controllers
         {
             if (ModelState.IsValid)
             {
-                var u = db.Partients.FirstOrDefault(k => k.UserName == user.Username && k.Password == user.Password);
+                var u = db.Patient.FirstOrDefault(k => k.UserName == user.UserName && k.Password == user.Password);
                 if (u != null)
                 {
                     Session["UserName"] = u;
@@ -62,7 +63,7 @@ namespace FinalDatLong.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("Password", "Error");
+                    ModelState.AddModelError("Password", "Error WrongPassword");
                 }
             }
             return View();
@@ -70,7 +71,7 @@ namespace FinalDatLong.Controllers
         public ActionResult DangXuat()
         {
             Session["UserName"] = null;
-            return RedirectToAction("Index", "Booking");
+            return RedirectToAction("Index", "SachOnline");
         }
     }
 }
