@@ -72,7 +72,7 @@ namespace FinalDatLong.Controllers
         public ActionResult DangXuat()
         {
             Session["UserName"] = null;
-            return RedirectToAction("Index", "SachOnline");
+            return RedirectToAction("Index", "Booking");
         }
     }
 }

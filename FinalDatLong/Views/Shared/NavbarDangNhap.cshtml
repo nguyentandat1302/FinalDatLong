@@ -1,5 +1,6 @@
-﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
+﻿<link href="~/Content/Site.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="~/Scripts/popper.min.js"></script>
 <style>
     .nav-text {
         margin: 10px;
@@ -82,11 +83,37 @@
 
                 <div class="col text-end ">
                     <!-- Nội dung ở giữa, cột 2 -->
-                    @*<a href="@Url.Action("DangKy","User")" type="button" class="bi bi-person-circle " style="border-radius:0px"></a>*@
-                    <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success " style="border-radius:0px">Đăng Ký</a>
-                    <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Đăng Nhập</a>
 
 
+                    @if (Session["UserName"] != null)
+                    {
+
+                        <!-- Example single danger button -->
+
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info" data-bs-toggle="dropdown">
+                                Profile
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("PatientProfile", "Booking")">Profile</a></li>
+                                <!-- Add more items as needed -->
+                            </ul>
+                        </div>
+
+
+                        <a href="@Url.Action("DangXuat","User")" type="button" class="btn btn-outline-primary" style="border-radius:0px">Đăng Xuất</a>
+
+
+                    }
+                    else
+                    {
+
+                        <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success " style="border-radius:0px">Đăng Ký</a>
+
+                        <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Đăng Nhập</a>
+
+                    }
 
                 </div>
 
@@ -131,27 +158,38 @@
                         <form id="form1">
                             <div class="row">
                                 <div class="col-5">
-                                    <h3>LƯU Ý:</h3>
+                                    <h3>Các chuyên khoa</h3>
 
-                                    <ul>
-                                        <li>
-                                            Lịch hẹn chỉ có hiệu lực khi Quý khách được xác nhận chính thức từ Bệnh viện thông qua
-                                            điện thoại hoặc email.
-                                        </li>
-                                        <li>
-                                            Quý khách sử dụng dịch vụ đặt hẹn trực tuyến, vui lòng đặt hẹn ít nhất 24h trước
-                                            khi đến khám.
-                                        </li>
-                                        <li>
-                                            Quý khách vui lòng cung cấp thông tin chính xác để được hỗ trợ nhanh nhất.
-                                        </li>
-                                        <li>
-                                            Trường hợp khẩn cấp hay có triệu chứng nguy hiểm, vui lòng liên hệ trực tiếp cơ sở y tế để
-                                            kịp thời xử lý.
-                                        </li>
-                                    </ul>
-
-                                    <button class="btnHotline success"><i class="bi bi-telephone-plus"></i> Hotline: 1900 555 533</button>
+                                    <a style="text-decoration: none" href="#Dakhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 20px 0 7px 0">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/specialties/da-khoa.png" />Đa khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Nhakhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width:60px;height:40px" src="https://cdn-healthcare.hellohealthgroup.com/specialties/nha-khoa.png" />Nha khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Dalieu">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/specialties/da-lieu.png" />Da liễu
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Nhankhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/2022/03/1648192921_623d6d99099d03.94959451.jpg" />Nhãn khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none" href="#Phukhoa">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0 ">
+                                            <img style="width: 60px; height: 40px " src="https://cdn-healthcare.hellohealthgroup.com/specialties/san-phu-khoa.png" />Phụ khoa
+                                        </div>
+                                    </a>
+                                    <a style="text-decoration: none;" href="#Trilieuthanhkinhcotsong">
+                                        <div class="row" style="color: black; font-size: x-large; padding: 10px 0 7px 0">
+                                            <img style="width: 60px; height: 40px" src="https://cdn-healthcare.hellohealthgroup.com/2022/01/1643269107_61f24bf31bd9a1.55037235.png" />Trị liệu thần kinh cột sống
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-7">
                                     <div class="row">
@@ -192,25 +230,6 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <a style=" color: #23A455">Chọn bệnh viện</a>
-                                            <select class="form-select">
-                                                <option>Bệnh viện mắt Sài Gòn</option>
-                                                <option>Bệnh viện Đa khoa Sài Gòn</option>
-                                                <option>Bệnh viện Nhi Đồng</option>
-                                                <option>...</option>
-                                            </select>
-                                        </div>
-                                        <div class="row">
-                                            <a style=" color: #23A455">Dịch vụ đăng ký</a>
-                                            <select class="form-select">
-                                                <option> </option>
-                                                <option>Điều trị về mắt</option>
-                                                <option>Điều trị da liễu</option>
-                                                <option>Điều trị xương khớp</option>
-                                                <option>...</option>
-                                            </select>
-                                        </div>
-                                        <div class="row">
                                             <a style=" color: #23A455">
                                                 Mô tả triệu chứng/lý do khám
                                             </a>
@@ -219,13 +238,16 @@
                                         <div class="row">
                                             <div style="text-align:center; margin: 5% 0 0 0">
                                                 <button class="btn success" onclick="myFunction()">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></button>
-
                                                 <p id="demo"></p>
                                                 <script>
                                                     function myFunction() {
-                                                        document.getElementById("form1").reset();
-                                                        document.getElementById("demo").innerHTML = "Đặt lịch thành công";
-
+                                                        var txt;
+                                                        if (confirm("Đặt hẹn thành công!")) {
+                                                            txt = "You pressed OK!";
+                                                        } else {
+                                                            txt = "You pressed Cancel!";
+                                                        }
+                                                        document.getElementById("demo").innerHTML = txt;
                                                     }
                                                 </script>
                                             </div>
@@ -243,5 +265,3 @@
 
     </div>
 </div>
-
-

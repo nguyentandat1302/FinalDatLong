@@ -1,5 +1,6 @@
-﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
+﻿<link href="~/Content/Site.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="~/Scripts/popper.min.js"></script>
 <style>
     .nav-text {
         margin: 10px;
@@ -82,11 +83,37 @@
 
                 <div class="col text-end ">
                     <!-- Nội dung ở giữa, cột 2 -->
-                    @*<a href="@Url.Action("DangKy","User")" type="button" class="bi bi-person-circle " style="border-radius:0px"></a>*@
-                    <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success " style="border-radius:0px">Đăng Ký</a>
-                    <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Đăng Nhập</a>
 
 
+                    @if (Session["UserName"] != null)
+                    {
+
+                        <!-- Example single danger button -->
+
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info" data-bs-toggle="dropdown">
+                                Profile
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("PatientProfile", "Booking")">Profile</a></li>
+                                <!-- Add more items as needed -->
+                            </ul>
+                        </div>
+
+
+                        <a href="@Url.Action("DangXuat","User")" type="button" class="btn btn-outline-primary" style="border-radius:0px">Đăng Xuất</a>
+
+
+                    }
+                    else
+                    {
+
+                        <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success " style="border-radius:0px">Đăng Ký</a>
+
+                        <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Đăng Nhập</a>
+
+                    }
 
                 </div>
 
@@ -213,7 +240,7 @@
                                                 <button class="btn success" onclick="myFunction()">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></button>
                                                 <p id="demo"></p>
                                                 <script>
-    function myFunction() {
+                                                    function myFunction() {
                                                         var txt;
                                                         if (confirm("Đặt hẹn thành công!")) {
                                                             txt = "You pressed OK!";
