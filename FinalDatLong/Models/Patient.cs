@@ -19,7 +19,7 @@
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDPatient { get; set; }
 
 
@@ -38,7 +38,6 @@
         [Compare("Password", ErrorMessage = " Mật Khẩu nhập lại không khớp")]
         public string MatKhauNL { get; set; }
 
-        [Required]
         [StringLength(255)]
         public string FullName { get; set; }
 

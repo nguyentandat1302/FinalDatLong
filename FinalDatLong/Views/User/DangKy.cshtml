@@ -1,8 +1,9 @@
 ﻿
-@{@model FinalDatLong.Models.Patient
+@model FinalDatLong.Models.Patient
+@{
 
-ViewBag.Title = "DangKy";
-Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
 }
 
 
@@ -25,7 +26,6 @@ Layout = "~/Views/Shared/LayoutNavbar.cshtml";
                                 <div class="form-outline mb-4">
                                     <label class="form-label">Tài Khoản</label>
                                     <input type="text" name="UserName" class="form-control form-control-lg" />
-
                                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-outline mb-4">
@@ -80,7 +80,7 @@ Layout = "~/Views/Shared/LayoutNavbar.cshtml";
                 </div>
             </div>
         </div>
-        
+
     </section>
-    
+
 </form>

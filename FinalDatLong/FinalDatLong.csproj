@@ -142,6 +142,14 @@
     <Compile Include="Migrations\202311140600013_qwerty.designer.cs">
       <DependentUpon>202311140600013_qwerty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311140822082_dfvgfffe.cs" />
+    <Compile Include="Migrations\202311140822082_dfvgfffe.designer.cs">
+      <DependentUpon>202311140822082_dfvgfffe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311140830549_fgchfjhk.cs" />
+    <Compile Include="Migrations\202311140830549_fgchfjhk.designer.cs">
+      <DependentUpon>202311140830549_fgchfjhk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -265,6 +273,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202311140600013_qwerty.resx">
       <DependentUpon>202311140600013_qwerty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311140822082_dfvgfffe.resx">
+      <DependentUpon>202311140822082_dfvgfffe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311140830549_fgchfjhk.resx">
+      <DependentUpon>202311140830549_fgchfjhk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
