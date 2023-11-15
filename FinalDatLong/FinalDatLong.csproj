@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SpecializationController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\ALLController.cs" />
@@ -138,17 +139,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311140600013_qwerty.cs" />
-    <Compile Include="Migrations\202311140600013_qwerty.designer.cs">
-      <DependentUpon>202311140600013_qwerty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311140822082_dfvgfffe.cs" />
-    <Compile Include="Migrations\202311140822082_dfvgfffe.designer.cs">
-      <DependentUpon>202311140822082_dfvgfffe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311140830549_fgchfjhk.cs" />
-    <Compile Include="Migrations\202311140830549_fgchfjhk.designer.cs">
-      <DependentUpon>202311140830549_fgchfjhk.cs</DependentUpon>
+    <Compile Include="Migrations\202311151700184_jfngdfhtg.cs" />
+    <Compile Include="Migrations\202311151700184_jfngdfhtg.designer.cs">
+      <DependentUpon>202311151700184_jfngdfhtg.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -239,6 +232,12 @@
     <Content Include="Views\ALL\Question.cshtml" />
     <Content Include="Views\ALL\Service.cshtml" />
     <Content Include="Views\ALL\Instruction.cshtml" />
+    <Content Include="Views\Specialization\Dakhoa.cshtml" />
+    <Content Include="Views\Specialization\Nhakhoa.cshtml" />
+    <Content Include="Views\Specialization\Dalieu.cshtml" />
+    <Content Include="Views\Specialization\Nhankhoa.cshtml" />
+    <Content Include="Views\Specialization\Phukhoa.cshtml" />
+    <Content Include="Views\Specialization\Cotsong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -272,14 +271,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311140600013_qwerty.resx">
-      <DependentUpon>202311140600013_qwerty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311140822082_dfvgfffe.resx">
-      <DependentUpon>202311140822082_dfvgfffe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311140830549_fgchfjhk.resx">
-      <DependentUpon>202311140830549_fgchfjhk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311151700184_jfngdfhtg.resx">
+      <DependentUpon>202311151700184_jfngdfhtg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

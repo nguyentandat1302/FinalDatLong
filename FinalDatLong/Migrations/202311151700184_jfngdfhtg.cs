@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class qwerty : DbMigration
+    public partial class jfngdfhtg : DbMigration
     {
         public override void Up()
         {
@@ -43,6 +43,7 @@
                         Password = c.String(nullable: false, maxLength: 255, unicode: false),
                         FullName = c.String(nullable: false, maxLength: 255, unicode: false),
                         Email = c.String(nullable: false, maxLength: 255, unicode: false),
+                        Phone = c.String(nullable: false, maxLength: 255),
                         Specialization = c.String(nullable: false, maxLength: 255, unicode: false),
                     })
                 .PrimaryKey(t => t.IDDoctor);
@@ -66,10 +67,10 @@
                 "dbo.Patient",
                 c => new
                     {
-                        IDPatient = c.Int(nullable: false),
+                        IDPatient = c.Int(nullable: false, identity: true),
                         UserName = c.String(nullable: false, maxLength: 50, unicode: false),
                         Password = c.String(nullable: false, maxLength: 255, unicode: false),
-                        FullName = c.String(nullable: false, maxLength: 255, unicode: false),
+                        FullName = c.String(maxLength: 255, unicode: false),
                         Email = c.String(nullable: false, maxLength: 100, unicode: false),
                     })
                 .PrimaryKey(t => t.IDPatient);

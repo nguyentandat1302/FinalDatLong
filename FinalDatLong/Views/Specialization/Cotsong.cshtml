@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Dakhoa";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+    body {
+        background-color: #B3E5FC;
+    }
+
+
+    .card-1 {
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        background-color: #fff;
+    }
+
+
+    .icons i {
+        margin-left: 20px;
+    }
+</style>
+
+
+<div class="container mt-5">
+
+    <table class="table table-borderless table-responsive card-1 p-4">
+        <thead>
+            <tr class="border-bottom">
+                <th>
+                    <span class="ml-2">Doctoc</span>
+                </th>
+                <th>
+                    <span class="ml-2">Email</span>
+                </th>
+                <th>
+                    <span class="ml-2">Expert</span>
+                </th>
+                <th>
+                    <span class="ml-2">Phone</span>
+                </th>
+                <th>
+                    <span class="ml-4">Action</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var doctor in Model)
+            {
+                <tr class="border-bottom">
+                    <td>
+                        <div class="p-2 d-flex flex-row align-items-center mb-2">
+                            <img src="https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*" width="40" class="rounded-circle">
+                            <div class="d-flex flex-colum  n ml-2">
+                                <span class="d-block font-weight-bold">@doctor.FullName</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="p-2">
+                            <span class="font-weight-bold">@doctor.Email</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="p-2">
+                            <span class="font-weight-bold">@doctor.Specialization</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="p-2 d-flex flex-column">
+                            <span class="font-weight-bold">@doctor.Phone</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <div id="Dakhoa">
+                                <button class="btn success" onclick="myFunction()">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></button>
+                            </div>
+                            @*<script>
+                                                                    function myFunction() {
+                                                                        var doctorName = @doctor.FullName;
+                                document.querySelector('#myModal')
+
+                                                                        // Hide view1 and show view2
+                                                                        document.getElementById('Dakhoa').style.display = 'none';
+                                                                        document.getElementById('myModal').style.display = 'block';
+                                                                    }
+                                                                </script>*@
+                        </div>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

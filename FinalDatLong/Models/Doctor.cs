@@ -39,6 +39,10 @@ namespace FinalDatLong.Models
 
         [Required]
         [StringLength(255)]
+        public string Phone { get; set; }
+
+        [Required]
+        [StringLength(255)]
         public string Specialization { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
