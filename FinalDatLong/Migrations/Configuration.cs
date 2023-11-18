@@ -5,35 +5,26 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.IO;
     using System.Linq;
+    using System.Security.Cryptography;
 
     internal sealed class Configuration : DbMigrationsConfiguration<FinalDatLong.Models.Model1>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+   
+        AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(FinalDatLong.Models.Model1 context)
         {
-            var lstChuDe = new List<Doctor>();
-            lstChuDe.Add(new Doctor { FullName = "Mr.Long", Email = "Long123@gmail.com", Specialization = "Đa khoa" });
-            lstChuDe.Add(new Doctor { FullName = "Mr.Dat", Email = "Dat123@gmail.com", Specialization = "Đa khoa" });
-            lstChuDe.Add(new Doctor { FullName = "Mr.Phong", Email = "phong123@gmail.com", Specialization = "Nha khoa" });
-            lstChuDe.Add(new Doctor { FullName = "Mr.Nam", Email = "nam1236@gmail.com", Specialization = "Da liễu" });
-            lstChuDe.Add(new Doctor { FullName = "Mr.tho", Email = "tho123@gmail.com", Specialization = "Da liễu" });
-            lstChuDe.Add(new Doctor { FullName = "Mr.hoang", Email = "hoang1623@gmail.com", Specialization = "Nhãn khoa" });
-            lstChuDe.Add(new Doctor { FullName = "Mr.do", Email = "do1238@gmail.com", Specialization = "Phụ khoa" });
-            lstChuDe.Add(new Doctor { FullName = "Mr.dung", Email = "dung4123@gmail.com", Specialization = "Phụ khoa" });
-            lstChuDe.Add(new Doctor
-            {
-                FullName = "Mr.tan",
-                Email = "tan1283@gmail.com",
-                Specialization = "Thần kinh cột sống"
-            });
-            lstChuDe.ForEach(c => context.Doctor.AddOrUpdate(c));
+            var lstUsers = new List<Admin>();
+            lstUsers.Add(new Admin {IDAdmin =1,UserName = "admin", Password = "123", Role = "admin", Email = "datnguyen13021302@gmail.com", Avatar = Utility.ConvertImageToBase64(Path.GetFullPath("../Image/q.jpg")), FullName="Tét" });
+            lstUsers.Add(new Admin {IDAdmin =2, UserName = "doctor1", Password = "123", Role = "doctor", FullName ="fsfs",Email="gdgdgd" });
+            lstUsers.ForEach(s => context.Admin.AddOrUpdate(s));
 
-
+            base.Seed(context);
 
             base.Seed(context);
         }

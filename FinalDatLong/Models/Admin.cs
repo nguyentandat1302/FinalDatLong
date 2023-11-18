@@ -10,7 +10,7 @@ namespace FinalDatLong.Models
     public partial class Admin
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDAdmin { get; set; }
 
         [Required]
@@ -21,6 +21,12 @@ namespace FinalDatLong.Models
         [StringLength(255)]
         public string Password { get; set; }
 
+
+      
+
+        public string Avatar { get; set; }
+
+
         [Required]
         [StringLength(255)]
         public string FullName { get; set; }
@@ -28,5 +34,8 @@ namespace FinalDatLong.Models
         [Required]
         [StringLength(255)]
         public string Email { get; set; }
+
+        [Required]
+        public string Role { get; set; }
     }
 }

@@ -25,9 +25,10 @@ namespace FinalDatLong
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                       "~/Content/bootstrap.css",
-                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/Admin/css").Include(
+                        "~/Content/Admin/dashboard.css"));
+            bundles.Add(new ScriptBundle("~/bundles/Admin").Include(
+                      "~/Scripts/Admin/dashboard.js"));
         }
     }
 }

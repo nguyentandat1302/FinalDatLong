@@ -1,0 +1,69 @@
+{
+  "MenuItems": [
+    {
+      "DisplayName": "Dashboard",
+      "Icon": "bi-columns",
+      "Link": "/Admin/Home/Index",
+      "IsNested": false,
+      "Sequence": 1,
+      "UserRoles": [ "admin", "doctor" ],
+      "NestedItems": []
+    },
+    {
+      "DisplayName": "Quản Lý Bác Sỹ",
+      "Icon": "bi-person-circle",
+      "Link": "/Admin/Doctor/Index",
+      "IsNested": false,
+      "Sequence": 2,
+      "UserRoles": [ "admin" ],
+      "NestedItems": []
+    },
+    {
+      "DisplayName": "Quản Lý Bệnh Nhân",
+      "Icon": "bi-person-circle",
+      "Link": "/Admin/Patient/Index",
+      "IsNested": false,
+      "Sequence": 3,
+      "UserRoles": [ "admin" ],
+      "NestedItems": []
+    },
+    {
+      "DisplayName": "Quản Lý Feedback",
+      "Icon": "bi-rss",
+      "Link": "/Admin/Feedback/Index",
+      "IsNested": false,
+      "Sequence": 4,
+      "UserRoles": [ "admin" ],
+      "NestedItems": []
+    },
+    {
+      "DisplayName": "Quản Lý Lịch hẹn",
+      "Icon": "bi-calendar-day",
+      "Link": "/Admin/Appointment/Index",
+      "IsNested": false,
+      "Sequence": 5,
+      "UserRoles": [ "doctor", "admin" ],
+      "NestedItems": []
+    },
+    {
+      "DisplayName": "Quản Lý Đơn thuốc",
+      "Icon": " bi-capsule",
+      "Link": "/Admin/ListOfMedication/Index",
+      "IsNested": false,
+      "Sequence": 6,
+      "UserRoles": [ "doctor", "admin" ],
+      "NestedItems": []
+    },
+    {
+      "DisplayName": "Đăng Xuất",
+      "Icon": "bi-box-arrow-right",
+      "Link": "/Admin/Home/Logout",
+      "IsNested": false,
+      "Sequence": 7,
+      "UserRoles": [ "doctor", "admin" ],
+      "NestedItems": []
+    }
+
+
+  ]
+}
