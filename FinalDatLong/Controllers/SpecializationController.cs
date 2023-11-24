@@ -22,10 +22,5 @@ namespace FinalDatLong.Controllers
             return View(listDoctor);
         }
 
-        public ActionResult ProfileDoctor(string Khoa)
-        {
-            var listDoctor = from doctor in db.Doctor where doctor.Specialization == Khoa select doctor;
-            return View(listDoctor);
-        }
     }
 }

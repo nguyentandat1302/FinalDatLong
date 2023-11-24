@@ -1,4 +1,4 @@
-﻿
+﻿@model FinalDatLong.Models.Doctor
 @{
     ViewBag.Title = "ProfileDoctor";
     Layout = "~/Views/Shared/LayoutNavbar.cshtml";
@@ -49,28 +49,26 @@
 
 
 <div class="container">
+  
     <div class="row">
         <div class="col-4">
             <div class="profile-img">
                 <img src="https://media.licdn.com/dms/image/C4E03AQF57TCRIfdLKw/profile-displayphoto-shrink_800_800/0/1646812111800?e=2147483647&v=beta&t=nL5SjoDBIKMC_f8VezqXVsjkhwxOJRI5GqVRgau0yLU" alt="Avata" />
             </div>
 
+
             <div class="profile-head">
                 <h3>
-                    NAME
+                   @Model.FullName
                 </h3>
-                <h4>
-                    Specialization
-                </h4>
+                
             </div>
 
             <div class="col-md-4">
                 <div class="profile-work">
-                    <p>Liên hệ</p>
-                    <a href="">Email</a><br />
-                    <a href="">Phone</a><br />
-                    <p>Specialization</p>
-                    <a href="">Chi tiết chuyên môn</a><br />
+                    <p>Spectialization: @Model.Specialization</p>
+                    <p>Email: @Model.Email</p>
+                    <p>Phone: @Model.Phone</p>
                 </div>
             </div>
         </div>
@@ -125,5 +123,6 @@
             </div>
         </div>
     </div>
+    
 </div>
 

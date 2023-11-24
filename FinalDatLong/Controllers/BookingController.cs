@@ -49,10 +49,10 @@ namespace FinalDatLong.Controllers
         {
             return PartialView();
         }
-        public ActionResult ProfileDoctor(string ProfileD)
+        public ActionResult ProfileDoctor(int IDDoctor)
         {
-            var listDoctor = from doctor in db.Doctor where doctor.Specialization == ProfileD select doctor;
-            return View(listDoctor);
+          var doctor = db.Doctor.FirstOrDefault(s=>s.IDDoctor == IDDoctor);
+            return View(doctor);
         }
         public ActionResult PatientProfile()
         {
