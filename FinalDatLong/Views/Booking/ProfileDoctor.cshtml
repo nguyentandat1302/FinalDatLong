@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "ProfileDoctor";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+
+<style>
+    .profile-img img {
+        width: 200px;
+        height: 240px;
+    }
+    .profile-head h3 {
+        color: #333;
+        padding: 5% 0 0 5%;
+    }
+
+    .profile-head h4 {
+        color: #0062cc;
+        padding: 0 0 0 3%;
+        font-size: 20px;
+    }
+
+    .profile-work {
+        padding: 0 0 0 5%;
+    }
+
+    .profile-work p {
+        font-size: 20px;
+        color: #818182;
+        font-weight: 600;
+    }
+
+    .profile-work a {
+        text-decoration: none;
+        color: #495057;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .profile-work ul {
+        list-style: none;
+    }
+
+</style>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="profile-img">
+                <img src="https://media.licdn.com/dms/image/C4E03AQF57TCRIfdLKw/profile-displayphoto-shrink_800_800/0/1646812111800?e=2147483647&v=beta&t=nL5SjoDBIKMC_f8VezqXVsjkhwxOJRI5GqVRgau0yLU" alt="Avata" />
+            </div>
+
+            <div class="profile-head">
+                <h3>
+                    NAME
+                </h3>
+                <h4>
+                    Specialization
+                </h4>
+            </div>
+
+            <div class="col-md-4">
+                <div class="profile-work">
+                    <p>Liên hệ</p>
+                    <a href="">Email</a><br />
+                    <a href="">Phone</a><br />
+                    <p>Specialization</p>
+                    <a href="">Chi tiết chuyên môn</a><br />
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <h3 class="text-center" style="padding: 5% 0 0 0">ĐẶT LỊCH KHÁM BỆNH</h3>
+                <div class="row">
+                    <br />
+                </div>
+                <div class="row">
+                    <a style=" color: #23A455">Họ tên</a>
+                    <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                </div>
+                <div class="row">
+                    <a style=" color: #23A455">Số điện thoại</a>
+                    <input type="text" class="form-control" aria-describedby="inputGroup-sizing-sm" />
+                </div>
+               
+                <div class="row">
+                    <div class="col">
+                        <a style=" color: #23A455">Ngày đặt hẹn</a>
+                        <input class="form-control" type="date" />
+                    </div>
+                    <div class="col">
+                        <a style=" color: #23A455">Thời gian</a>
+                        <input class="form-control" type="time" />
+                    </div>
+                </div>
+                <div class="row">
+                    <a style=" color: #23A455">
+                        Mô tả triệu chứng/lý do khám
+                    </a>
+<textarea name="mo-ta" rows="4" cols="50"></textarea>
+                </div>
+                <div class="row">
+                    <div style="text-align:center; margin: 5% 0 0 0">
+                        <button class="btn btn-success" onclick="myFunction()">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></button>
+                        <p id="demo"></p>
+                        <script>
+                            function myFunction() {
+                                var txt;
+                                if (confirm("Đặt hẹn thành công!")) {
+                                    txt = "You pressed OK!";
+                                } else {
+                                    txt = "You pressed Cancel!";
+                                }
+                                document.getElementById("demo").innerHTML = txt;
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

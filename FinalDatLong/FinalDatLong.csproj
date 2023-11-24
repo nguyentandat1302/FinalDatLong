@@ -135,7 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\SpecializationController.cs" />
+    <Compile Include="Controllers\SpecializationController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DoctorController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -258,7 +258,6 @@
     <Content Include="Views\Shared\SlideShow.cshtml" />
     <Content Include="Views\Shared\Video.cshtml" />
     <Content Include="Views\Shared\Card.cshtml" />
-    <Content Include="Views\Shared\DoctorProfile.cshtml" />
     <Content Include="Views\Shared\PatientProfile.cshtml" />
     <Content Include="Views\Shared\Contact.cshtml" />
     <Content Include="Views\ALL\Contacts.cshtml" />
@@ -266,12 +265,9 @@
     <Content Include="Views\ALL\Question.cshtml" />
     <Content Include="Views\ALL\Service.cshtml" />
     <Content Include="Views\ALL\Instruction.cshtml" />
-    <Content Include="Views\Specialization\Dakhoa.cshtml" />
-    <Content Include="Views\Specialization\Nhakhoa.cshtml" />
-    <Content Include="Views\Specialization\Dalieu.cshtml" />
-    <Content Include="Views\Specialization\Nhankhoa.cshtml" />
-    <Content Include="Views\Specialization\Phukhoa.cshtml" />
-    <Content Include="Views\Specialization\Cotsong.cshtml" />
+    <Content Include="Views\Booking\NewBooking.cshtml" />
+    <Content Include="Views\Specialization\Khoa.cshtml" />
+    <Content Include="Views\Booking\ProfileDoctor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

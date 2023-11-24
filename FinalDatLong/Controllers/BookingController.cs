@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalDatLong.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,8 @@ namespace FinalDatLong.Controllers
     public class BookingController : Controller
     {
         // GET: Booking
+        Model1 db = new Model1();
+
         public ActionResult Index()
         {
             return View();
@@ -46,14 +49,18 @@ namespace FinalDatLong.Controllers
         {
             return PartialView();
         }
-        public ActionResult DoctorProfile()
+        public ActionResult ProfileDoctor(string ProfileD)
         {
-            return PartialView();
+            var listDoctor = from doctor in db.Doctor where doctor.Specialization == ProfileD select doctor;
+            return View(listDoctor);
         }
         public ActionResult PatientProfile()
         {
             return PartialView();
         }
-
+        public ActionResult NewBooking()
+        {
+            return PartialView();
+        }
     }
 }

@@ -23,10 +23,10 @@
             lstUsers.Add(new Admin {IDAdmin =1,UserName = "admin", Password = "123", Role = "admin", Email = "datnguyen13021302@gmail.com", Avatar = Utility.ConvertImageToBase64(Path.GetFullPath("../Image/q.jpg")), FullName="Tét" });
             lstUsers.Add(new Admin {IDAdmin =2, UserName = "doctor1", Password = "123", Role = "doctor", FullName ="fsfs",Email="gdgdgd" });
             lstUsers.ForEach(s => context.Admin.AddOrUpdate(s));
-
+              
             base.Seed(context);
 
-            base.Seed(context);
+            
         }
     }
 }
