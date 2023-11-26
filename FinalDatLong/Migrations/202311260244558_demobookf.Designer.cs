@@ -7,13 +7,13 @@ namespace FinalDatLong.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ytuyt : IMigrationMetadata
+    public sealed partial class demobookf : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ytuyt));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(demobookf));
         
         string IMigrationMetadata.Id
         {
-            get { return "202311160910584_ytuyt"; }
+            get { return "202311260244558_demobookf"; }
         }
         
         string IMigrationMetadata.Source

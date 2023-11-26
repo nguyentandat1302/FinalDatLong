@@ -44,6 +44,10 @@
         [Required(ErrorMessage = "Email không được để trống")]
         [StringLength(100)]
         public string Email { get; set; }
+        [StringLength(100)]
+        public string PhoneNumber { get; set; }
+    
+        public string Avatar { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appointment> Appointment { get; set; }

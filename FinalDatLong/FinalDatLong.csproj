@@ -152,21 +152,21 @@
     <Compile Include="Migrations\202311151700184_jfngdfhtg.designer.cs">
       <DependentUpon>202311151700184_jfngdfhtg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311160910584_ytuyt.cs" />
-    <Compile Include="Migrations\202311160910584_ytuyt.designer.cs">
-      <DependentUpon>202311160910584_ytuyt.cs</DependentUpon>
+    <Compile Include="Migrations\202311241647083_rttryt.cs" />
+    <Compile Include="Migrations\202311241647083_rttryt.designer.cs">
+      <DependentUpon>202311241647083_rttryt.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311160932275_fnmbn.cs" />
-    <Compile Include="Migrations\202311160932275_fnmbn.designer.cs">
-      <DependentUpon>202311160932275_fnmbn.cs</DependentUpon>
+    <Compile Include="Migrations\202311260244558_demobookf.cs" />
+    <Compile Include="Migrations\202311260244558_demobookf.designer.cs">
+      <DependentUpon>202311260244558_demobookf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311160948081_fsfsfs.cs" />
-    <Compile Include="Migrations\202311160948081_fsfsfs.designer.cs">
-      <DependentUpon>202311160948081_fsfsfs.cs</DependentUpon>
+    <Compile Include="Migrations\202311260257330_difdjns.cs" />
+    <Compile Include="Migrations\202311260257330_difdjns.designer.cs">
+      <DependentUpon>202311260257330_difdjns.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311160951338_fsfsfs1.cs" />
-    <Compile Include="Migrations\202311160951338_fsfsfs1.designer.cs">
-      <DependentUpon>202311160951338_fsfsfs1.cs</DependentUpon>
+    <Compile Include="Migrations\202311260331259_tjh.cs" />
+    <Compile Include="Migrations\202311260331259_tjh.designer.cs">
+      <DependentUpon>202311260331259_tjh.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -304,17 +304,17 @@
     <EmbeddedResource Include="Migrations\202311151700184_jfngdfhtg.resx">
       <DependentUpon>202311151700184_jfngdfhtg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311160910584_ytuyt.resx">
-      <DependentUpon>202311160910584_ytuyt.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311241647083_rttryt.resx">
+      <DependentUpon>202311241647083_rttryt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311160932275_fnmbn.resx">
-      <DependentUpon>202311160932275_fnmbn.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311260244558_demobookf.resx">
+      <DependentUpon>202311260244558_demobookf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311160948081_fsfsfs.resx">
-      <DependentUpon>202311160948081_fsfsfs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311260257330_difdjns.resx">
+      <DependentUpon>202311260257330_difdjns.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311160951338_fsfsfs1.resx">
-      <DependentUpon>202311160951338_fsfsfs1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311260331259_tjh.resx">
+      <DependentUpon>202311260331259_tjh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

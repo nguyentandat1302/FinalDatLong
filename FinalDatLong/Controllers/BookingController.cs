@@ -56,7 +56,8 @@ namespace FinalDatLong.Controllers
         }
         public ActionResult PatientProfile()
         {
-            return PartialView();
+      
+                return PartialView();
         }
         public ActionResult NewBooking()
         {

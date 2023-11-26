@@ -41,6 +41,10 @@ namespace FinalDatLong.Models
         [StringLength(255)]
         public string Phone { get; set; }
 
+        public string Avatar { get; set; }
+
+        [StringLength(255)]
+        public string Introduction { get; set; }
         [Required]
         [StringLength(255)]
         public string Specialization { get; set; }

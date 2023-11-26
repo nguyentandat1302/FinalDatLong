@@ -7,13 +7,13 @@ namespace FinalDatLong.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class fnmbn : IMigrationMetadata
+    public sealed partial class difdjns : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fnmbn));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(difdjns));
         
         string IMigrationMetadata.Id
         {
-            get { return "202311160932275_fnmbn"; }
+            get { return "202311260257330_difdjns"; }
         }
         
         string IMigrationMetadata.Source
