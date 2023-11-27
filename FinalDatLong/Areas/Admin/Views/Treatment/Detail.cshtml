@@ -1,0 +1,168 @@
+﻿@model FinalDatLong.Models.Treatment
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Detail - Patient View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .detail-container {
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+        }
+
+        .profile-column, .detail-column {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: #f9f9f9; /* Đã thêm màu nền */
+            border: 1px solid #ddd; /* Đã thêm đường biên */
+            border-radius: 4px;
+            resize: none; /* Ngăn chặn việc thay đổi kích thước */
+            pointer-events: none; /* Ngăn chặn sự kiện để ngăn người dùng chỉnh sửa */
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <div class="detail-container">
+
+
+            <div class="profile-column">
+                <h2>Patient Profile</h2>
+
+
+                <div class="profile-img">
+                    <img src="@Model.Patient.Avatar" style="width:200px; height:200px" />
+                </div>
+                <br />
+                <div>
+                    <span class="detail-label">Patient Name:</span>
+
+                    @Model.Patient.FullName
+
+                </div>
+                <div>
+                    <span class="detail-label">Email:</span>
+                    @Model.Patient.Email
+
+                </div>
+                <div>
+                    <span class="detail-label">Phone:</span>
+                    @Model.Patient.PhoneNumber
+
+                </div>
+
+                <!-- Thêm thông tin bệnh nhân khác cần thiết -->
+            </div>
+
+            <div class="detail-column">
+                <h2>Treatment Detail</h2>
+                <div>
+                    <span class="detail-label">Description:</span>
+                    <textarea id="Description">@Model.Description</textarea>
+                </div>
+                <div>
+                    <span class="detail-label">Treatment Description:</span>
+                    <textarea id="TreatmentDescription">@Model.TreatmentDescription</textarea>
+                </div>
+                <div>
+                    <span class="detail-label">Medications:</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Dosage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Điền dữ liệu từ danh sách thuốc -->
+                            <tr>
+                                <td>1</td>
+                                <td>Medication 1</td>
+                                <td>10mg</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Medication 2</td>
+                                <td>20mg</td>
+                            </tr>
+                            <!-- Thêm các dòng khác nếu cần -->
+                        </tbody>
+                    </table>
+                </div>
+                <button class="back-button" onclick="goBack()">Back</button>
+            </div>
+        </div>
+
+        <script>
+            function goBack() {
+                // Thêm logic để quay lại trang trước đó hoặc đóng cửa sổ thoáng
+                window.history.back();
+            }
+        </script>
+</body>
+</html>

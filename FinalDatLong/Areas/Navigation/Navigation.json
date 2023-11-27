@@ -55,6 +55,15 @@
       "NestedItems": []
     },
     {
+      "DisplayName": "List Treatment",
+      "Icon": " bi bi-card-checklist",
+      "Link": "/Admin/Treatment/Index",
+      "IsNested": false,
+      "Sequence": 4,
+      "UserRoles": [ "doctor" ],
+      "NestedItems": []
+    },
+    {
       "DisplayName": "Đăng Xuất",
       "Icon": "bi-box-arrow-right",
       "Link": "/Admin/Home/Logout",

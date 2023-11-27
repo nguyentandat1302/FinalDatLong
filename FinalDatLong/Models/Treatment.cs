@@ -28,6 +28,9 @@ namespace FinalDatLong.Models
 
         public virtual Doctor Doctor { get; set; }
 
+        public string TreatmentDescription { get; set; }
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListOfMedications> ListOfMedications { get; set; }
 

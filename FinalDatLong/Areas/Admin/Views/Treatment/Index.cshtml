@@ -1,0 +1,133 @@
+﻿@model IEnumerable<FinalDatLong.Models.Treatment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+            .action-buttons button {
+                padding: 8px;
+                margin-right: 10px;
+                cursor: pointer;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+            }
+    </style>
+</head>
+<body>
+    <h2>Treatment Information</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID Treatment</th>
+               
+                <th>ID Patient</th>
+                <th>Description</th>
+                <th>Doctor Name</th>
+                <th>Patient Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var item in Model)
+           {
+
+            <tr>
+                <td>@item.IDTreatment</td>
+                <td>@item.IDPatient</td>
+                <td>@item.Description</td>
+                <td>
+                    @if (item != null && item.Doctor != null)
+                    {
+                        @item.Doctor.FullName
+                    }
+                  
+                </td>
+                <td>
+                    @if (item != null && item.Patient != null)
+                    {
+                        @item.Patient.FullName
+                    }
+                   
+                </td>
+                <td>
+                    <a href="#" class="btn btn-warning" role="button">Sửa</a>
+                    <a href="@Url.Action("Detail", "Treatment" , new {id = item.IDPatient}) " class="btn btn-primary" role="button">Chi tiết</a>
+                    <a href="#" class="btn btn-danger" role="button">Xóa</a>
+                </td>
+            </tr>
+           }
+            <!-- Thêm các dòng khác tương tự cho dữ liệu thực tế -->
+        </tbody>
+    </table>
+
+   
+</body>
+</html>
+
+@*@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.IDTreatment }) |
+                @Html.ActionLink("Details", "Details", new { id=item.IDTreatment }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.IDTreatment })
+            </td>
+        </tr>
+    }*@
+
+

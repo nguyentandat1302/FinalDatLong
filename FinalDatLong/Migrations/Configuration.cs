@@ -1,6 +1,7 @@
 ﻿namespace FinalDatLong.Migrations
 {
     using FinalDatLong.Models;
+    using SachOnline;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
