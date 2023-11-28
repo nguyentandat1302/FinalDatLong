@@ -71,7 +71,7 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("Delete", "Doctor", FormMethod.Post, new {id = Model.IDDoctor})) {
         @Html.AntiForgeryToken()
 
 <div class="form-actions no-color">

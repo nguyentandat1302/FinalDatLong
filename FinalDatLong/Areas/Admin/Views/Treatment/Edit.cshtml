@@ -1,0 +1,175 @@
+﻿@model FinalDatLong.Models.Treatment
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Treatment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .detail-container {
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+        }
+
+        .profile-column, .detail-column {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .back-button, .save-button {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <div class="profile-column">
+            <h2>Patient Profile</h2>
+
+            <div class="profile-img">
+                <img src="@Model.Patient.Avatar" style="width:200px; height:200px" />
+            </div>
+            <br />
+            <div>
+                <span class="detail-label">Patient Name:</span>
+                @Model.Patient.FullName
+            </div>
+            <div>
+                <span class="detail-label">Email:</span>
+                @Model.Patient.Email
+            </div>
+            <div>
+                <span class="detail-label">Phone:</span>
+                @Model.Patient.PhoneNumber
+            </div>
+        </div>
+
+        <div class="detail-column">
+            <h2>Edit Treatment</h2>
+            <div>
+                <span class="detail-label">Description:</span>
+                <textarea id="Description" placeholder="Enter treatment description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+            </div>
+            <div>
+                <span class="detail-label">Treatment Description:</span>
+                <textarea id="TreatmentDescription" placeholder="Enter detailed treatment information">Additional details about the treatment.</textarea>
+            </div>
+            <div>
+                <span class="detail-label">Medications:</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Dosage</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="MedicationTableBody">
+                        <tr>
+                            <td>1</td>
+                            <td>Medication 1</td>
+                            <td><textarea>Dosage 1</textarea></td>
+                            <td><button onclick="deleteMedication(1)">Delete</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Medication 2</td>
+                            <td><textarea>Dosage 2</textarea></td>
+                            <td><button onclick="deleteMedication(2)">Delete</button></td>
+                        </tr>
+                        <!-- Thêm các dòng khác nếu cần -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="save-button" onclick="saveTreatment()">Save Treatment</button>
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <script>
+function goBack() {
+            // Thêm logic để quay lại trang trước đó hoặc đóng cửa sổ thoáng
+            window.history.back();
+        }
+
+        function saveTreatment() {
+            // Thêm logic để lưu thông tin điều trị đã chỉnh sửa
+            alert("Treatment saved!");
+        }
+
+        function deleteMedication(medicationId) {
+            // Thêm logic để xóa thuốc khỏi danh sách
+            alert("Medication " + medicationId + " deleted!");
+        }</script>
+</body>
+</html>

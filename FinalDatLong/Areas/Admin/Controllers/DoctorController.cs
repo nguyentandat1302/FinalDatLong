@@ -84,8 +84,8 @@ namespace FinalDatLong.Areas.Admin.Controllers
             }
             return View(doctor);
         }
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirm(int id, FormCollection f)
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection f)
         {
             var doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
             if (doctor == null)
@@ -93,21 +93,25 @@ namespace FinalDatLong.Areas.Admin.Controllers
                 Response.StatusCode = 404;
                 return null;
             }
-            var ctdh = db.Doctor.Where(ct => ct.IDDoctor == id);
-            if (ctdh.Count() > 0)
+           // var ctdh = db.Doctor.Where(ct => ct.IDDoctor == id);
+           // if (ctdh.Count() > 0)
+           // {
+           //ViewBag.ThongBao = "Sách này đang có trong bảng Chi tiết đặt hàng <br>" +
+           //         "Nếu muốn xóa thì phải xóa hết mã sách này trong chi tiết đặt hàng";
+           //     return View(doctor);     
+           // }
+            var dt = db.Treatment.Where(t => t.IDDoctor == id).ToList();
+            if(dt.Count>0)
             {
-                ViewBag.ThongBao = "Sách này đang có trong bảng Chi tiết đặt hàng <br>" +
-                    "Nếu muốn xóa thì phải xóa hết mã sách này trong chi tiết đặt hàng";
-                return View(doctor);
+                ViewBag.ThongBao = "BS da dieu tri ko duoc phep xoa";
+                return RedirectToAction("Delete", "Doctor",new {id = doctor.IDDoctor });
+
             }
-            var bacsi = db.Doctor.Where(vs => vs.IDDoctor == id).ToList();
-            if (bacsi != null)
-            {
-                db.Doctor.RemoveRange(bacsi);
-                db.SaveChanges();
-            }
+
             db.Doctor.Remove(doctor);
             db.SaveChanges();
+           
+            
 
             return RedirectToAction("Index");
         }

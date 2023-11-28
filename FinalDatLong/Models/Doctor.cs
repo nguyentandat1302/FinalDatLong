@@ -18,7 +18,7 @@ namespace FinalDatLong.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//net set kieu automuber nhe
         public int IDDoctor { get; set; }
 
         [Required]

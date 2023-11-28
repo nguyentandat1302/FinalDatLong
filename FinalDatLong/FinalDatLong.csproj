@@ -161,6 +161,22 @@
     <Compile Include="Migrations\202311271710159_qweretr.designer.cs">
       <DependentUpon>202311271710159_qweretr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311280822230_fsfs.cs" />
+    <Compile Include="Migrations\202311280822230_fsfs.designer.cs">
+      <DependentUpon>202311280822230_fsfs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280833589_fsfs1.cs" />
+    <Compile Include="Migrations\202311280833589_fsfs1.designer.cs">
+      <DependentUpon>202311280833589_fsfs1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280838546_fsfs2.cs" />
+    <Compile Include="Migrations\202311280838546_fsfs2.designer.cs">
+      <DependentUpon>202311280838546_fsfs2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311280839261_fsfs3.cs" />
+    <Compile Include="Migrations\202311280839261_fsfs3.designer.cs">
+      <DependentUpon>202311280839261_fsfs3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -220,6 +236,8 @@
     <Content Include="Areas\Admin\Views\Doctor\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Treatment\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Treatment\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -307,6 +325,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202311271710159_qweretr.resx">
       <DependentUpon>202311271710159_qweretr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280822230_fsfs.resx">
+      <DependentUpon>202311280822230_fsfs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280833589_fsfs1.resx">
+      <DependentUpon>202311280833589_fsfs1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280838546_fsfs2.resx">
+      <DependentUpon>202311280838546_fsfs2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311280839261_fsfs3.resx">
+      <DependentUpon>202311280839261_fsfs3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,240 @@
+﻿@model FinalDatLong.Models.Treatment
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Treatment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .detail-container {
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+        }
+
+        .profile-column, .detail-column {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .back-button, .save-button {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 16px);
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+            .search-container input {
+                width: 100%;
+                padding: 8px;
+                margin-top: 8px;
+                margin-bottom: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+
+        .search-results {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            background-color: #f9f9f9;
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+            .search-results button {
+                width: 100%;
+                text-align: left;
+                padding: 8px;
+                border: none;
+                border-bottom: 1px solid #ddd;
+                background-color: white;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div class="detail-container">
+        <div class="profile-column">
+            <h2>Patient Profile</h2>
+            <div class="search-container">
+                <span class="detail-label">Search Patient:</span>
+                <input type="text" id="SearchPatient" placeholder="Enter patient ID" oninput="searchPatient()">
+                <div class="search-results" id="SearchResults"></div>
+            </div>
+            <div>
+                <span class="detail-label">Patient ID:</span>
+                <input type="text" id="PatientID" placeholder="Patient ID" readonly>
+            </div>
+            <div>
+                <span class="detail-label">Patient Name:</span>
+                <input type="text" id="PatientName" placeholder="Patient Name" readonly>
+            </div>
+            <div>
+                <span class="detail-label">Age:</span>
+                <input type="text" id="Age" placeholder="Age" readonly>
+            </div>
+            <div>
+                <span class="detail-label">Gender:</span>
+                <input type="text" id="Gender" placeholder="Gender" readonly>
+            </div>
+            <div>
+                <span class="detail-label">Contact:</span>
+                <input type="text" id="Contact" placeholder="Contact" readonly>
+            </div>
+            <!-- Thêm thông tin bệnh nhân khác cần thiết -->
+        </div>
+
+        <div class="detail-column">
+            <h2>Add Treatment</h2>
+            <div>
+                <span class="detail-label">Description:</span>
+                <textarea id="Description" placeholder="Enter treatment description"></textarea>
+            </div>
+            <div>
+                <span class="detail-label">Treatment Description:</span>
+                <textarea id="TreatmentDescription" placeholder="Enter detailed treatment information"></textarea>
+            </div>
+            <div>
+                <span class="detail-label">Medications:</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Dosage</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="MedicationTableBody">
+                        <!-- Thêm các dòng nếu có thuốc có sẵn -->
+                    </tbody>
+                </table>
+            </div>
+            <button class="save-button" onclick="saveTreatment()">Save Treatment</button>
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            // Thêm logic để quay lại trang trước đó hoặc đóng cửa sổ thoáng
+            window.history.back();
+        }
+
+        function saveTreatment() {
+            // Thêm logic để lưu thông tin điều trị mới
+            alert("Treatment saved!");
+        }
+
+        function searchPatient() {
+            const searchValue = document.getElementById("SearchPatient").value;
+            const searchResultsContainer = document.getElementById("SearchResults");
+
+            // TODO: Gửi yêu cầu AJAX để tìm kiếm bệnh nhân theo ID từ Controller
+            // và cập nhật nội dung trong searchResultsContainer
+
+            // Ví dụ đơn giản:
+            const mockResults = [
+
+                { id: 1, name: "Patient 1", age: 25, gender: "Male", contact: "123-456-7890" },
+                { id: 2, name: "Patient 2", age: 30, gender: "Female", contact: "987-654-3210" }
+            ];
+
+            const resultsHtml = mockResults.map(result => `
+                        <button onclick="selectPatient(${result.id}, '${result.name}', ${result.age}, '${result.gender}', '${result.contact}')">
+                            ${result.name} - ${result.age} years old - ${result.gender}
+                        </button>
+                    `).join("");
+
+            searchResultsContainer.innerHTML = resultsHtml;
+        }
+
+        function selectPatient(id, name, age, gender, contact) {
+            document.getElementById("PatientID").value = id;
+            document.getElementById("PatientName").value = name;
+            document.getElementById("Age").value = age;
+            document.getElementById("Gender").value = gender;
+            document.getElementById("Contact").value = contact;
+
+            // Xóa kết quả tìm kiếm
+            document.getElementById("SearchResults").innerHTML = "";
+        }
+    </script>
+</body>
+</html>

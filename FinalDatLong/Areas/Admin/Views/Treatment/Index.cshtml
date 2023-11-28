@@ -60,13 +60,17 @@
     </style>
 </head>
 <body>
+    <p>
+        @Html.ActionLink("Create", "Add", null, new { @class = "btn btn-outline-info" })
+    </p>
+    </p>
     <h2>Treatment Information</h2>
 
     <table>
         <thead>
             <tr>
                 <th>ID Treatment</th>
-               
+
                 <th>ID Patient</th>
                 <th>Description</th>
                 <th>Doctor Name</th>
@@ -75,39 +79,39 @@
             </tr>
         </thead>
         <tbody>
-           @foreach (var item in Model)
-           {
+            @foreach (var item in Model)
+            {
 
-            <tr>
-                <td>@item.IDTreatment</td>
-                <td>@item.IDPatient</td>
-                <td>@item.Description</td>
-                <td>
-                    @if (item != null && item.Doctor != null)
-                    {
-                        @item.Doctor.FullName
-                    }
-                  
-                </td>
-                <td>
-                    @if (item != null && item.Patient != null)
-                    {
-                        @item.Patient.FullName
-                    }
-                   
-                </td>
-                <td>
-                    <a href="#" class="btn btn-warning" role="button">Sửa</a>
-                    <a href="@Url.Action("Detail", "Treatment" , new {id = item.IDPatient}) " class="btn btn-primary" role="button">Chi tiết</a>
-                    <a href="#" class="btn btn-danger" role="button">Xóa</a>
-                </td>
-            </tr>
-           }
+                <tr>
+                    <td>@item.IDTreatment</td>
+                    <td>@item.IDPatient</td>
+                    <td>@item.Description</td>
+                    <td>
+                        @if (item != null && item.Doctor != null)
+                        {
+                            @item.Doctor.FullName
+                        }
+
+                    </td>
+                    <td>
+                        @if (item != null && item.Patient != null)
+                        {
+                            @item.Patient.FullName
+                        }
+
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit","Treatment" , new {id = item.IDPatient} )" class="btn btn-warning" role="button">Sửa</a>
+                        <a href="@Url.Action("Detail", "Treatment" , new {id = item.IDPatient}) " class="btn btn-primary" role="button">Chi tiết</a>
+                        <a href="#" class="btn btn-danger" role="button">Xóa</a>
+                    </td>
+                </tr>
+            }
             <!-- Thêm các dòng khác tương tự cho dữ liệu thực tế -->
         </tbody>
     </table>
 
-   
+
 </body>
 </html>
 
