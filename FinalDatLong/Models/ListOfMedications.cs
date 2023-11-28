@@ -14,6 +14,7 @@ namespace FinalDatLong.Models
 
         public int? IDTreatment { get; set; }
 
+        public int Rating { get; set; }
         [StringLength(255)]
         public string Medicine { get; set; }
 

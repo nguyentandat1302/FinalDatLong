@@ -135,6 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Admin\Controllers\TreatmentController.cs" />
     <Compile Include="Controllers\SpecializationController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -149,33 +150,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311151700184_jfngdfhtg.cs" />
-    <Compile Include="Migrations\202311151700184_jfngdfhtg.designer.cs">
-      <DependentUpon>202311151700184_jfngdfhtg.cs</DependentUpon>
+    <Compile Include="Migrations\202311281449024_sdfds.cs" />
+    <Compile Include="Migrations\202311281449024_sdfds.designer.cs">
+      <DependentUpon>202311281449024_sdfds.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311260331259_tjh.cs" />
-    <Compile Include="Migrations\202311260331259_tjh.designer.cs">
-      <DependentUpon>202311260331259_tjh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311271710159_qweretr.cs" />
-    <Compile Include="Migrations\202311271710159_qweretr.designer.cs">
-      <DependentUpon>202311271710159_qweretr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311280822230_fsfs.cs" />
-    <Compile Include="Migrations\202311280822230_fsfs.designer.cs">
-      <DependentUpon>202311280822230_fsfs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311280833589_fsfs1.cs" />
-    <Compile Include="Migrations\202311280833589_fsfs1.designer.cs">
-      <DependentUpon>202311280833589_fsfs1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311280838546_fsfs2.cs" />
-    <Compile Include="Migrations\202311280838546_fsfs2.designer.cs">
-      <DependentUpon>202311280838546_fsfs2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311280839261_fsfs3.cs" />
-    <Compile Include="Migrations\202311280839261_fsfs3.designer.cs">
-      <DependentUpon>202311280839261_fsfs3.cs</DependentUpon>
+    <Compile Include="Migrations\202311281722027_sdfdsdfsd.cs" />
+    <Compile Include="Migrations\202311281722027_sdfdsdfsd.designer.cs">
+      <DependentUpon>202311281722027_sdfdsdfsd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -229,7 +210,6 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\MenuPartial.cshtml" />
     <Content Include="Areas\Navigation\Navigation.json" />
-    <Content Include="Areas\Admin\Views\Doctor\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Doctor\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Doctor\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Doctor\Delete.cshtml" />
@@ -238,6 +218,12 @@
     <Content Include="Areas\Admin\Views\Treatment\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Doctor\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Patient\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Patient\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Patient\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Patient\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Feedback\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -317,26 +303,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311151700184_jfngdfhtg.resx">
-      <DependentUpon>202311151700184_jfngdfhtg.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311281449024_sdfds.resx">
+      <DependentUpon>202311281449024_sdfds.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311260331259_tjh.resx">
-      <DependentUpon>202311260331259_tjh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311271710159_qweretr.resx">
-      <DependentUpon>202311271710159_qweretr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311280822230_fsfs.resx">
-      <DependentUpon>202311280822230_fsfs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311280833589_fsfs1.resx">
-      <DependentUpon>202311280833589_fsfs1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311280838546_fsfs2.resx">
-      <DependentUpon>202311280838546_fsfs2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311280839261_fsfs3.resx">
-      <DependentUpon>202311280839261_fsfs3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311281722027_sdfdsdfsd.resx">
+      <DependentUpon>202311281722027_sdfdsdfsd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

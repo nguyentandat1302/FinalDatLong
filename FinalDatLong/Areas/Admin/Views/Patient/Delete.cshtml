@@ -1,18 +1,19 @@
-﻿@model FinalDatLong.Models.Doctor
+﻿@model FinalDatLong.Models.Patient
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Delete";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Delete</h2>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Doctor</h4>
+    <h4>Patient</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tài Khoản
+           UserName
         </dt>
 
         <dd>
@@ -20,7 +21,7 @@
         </dd>
 
         <dt>
-            Mật khẩu
+            Password
         </dt>
 
         <dd>
@@ -28,7 +29,7 @@
         </dd>
 
         <dt>
-            FullName
+           FullName
         </dt>
 
         <dd>
@@ -36,7 +37,7 @@
         </dd>
 
         <dt>
-           Email
+            Email
         </dt>
 
         <dd>
@@ -44,11 +45,11 @@
         </dd>
 
         <dt>
-            Số điện thoại
+         PhoneNumber
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Phone)
+            @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
         <dt>
@@ -59,26 +60,14 @@
             <img style="height:200px;width:200px" src="@Model.Avatar" alt=" @Model.FullName">
         </dd>
 
-        <dt>
-          Giới Thiệu
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Introduction)
-        </dd>
-
-        <dt>
-            Chuyên Môn
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Specialization)
-        </dd>
-
     </dl>
-</div>
-<p>
-  
-    @Html.ActionLink("QUAY VỀ TRANG QUẢN LÝ DOCTOR", "Index")
+     
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
 
-</p>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-outline-warning" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

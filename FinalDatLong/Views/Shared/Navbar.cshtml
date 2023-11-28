@@ -88,11 +88,9 @@
                     @if (Session["UserName"] != null)
                     {
 
-                        <!-- Example single danger button -->
-
 
                         <div class="btn-group">
-                            <button type="button" class="btn btn-info" data-bs-toggle="dropdown">
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown">
                                 Profile
                             </button>
                             <ul class="dropdown-menu">
@@ -101,8 +99,8 @@
                             </ul>
                         </div>
 
-
-                        <a href="@Url.Action("DangXuat","User")" type="button" class="btn btn-outline-primary" style="border-radius:0px">Đăng Xuất</a>
+                        <a href="@Url.Action("Feedback", "User", new { id = ViewBag.IDPatient })" type="button" class="btn btn-outline-success" style="border-radius:0px">Feedback</a>
+                        <a href="@Url.Action("DangXuat","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Đăng Xuất</a>
 
                     }
                     else
@@ -134,10 +132,30 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
+        @*<div class="col-lg-3">
             @Html.Action("NewBooking", "Booking")
+        </div>*@
+
+        <div class="col-lg-3">
+            @if (Session["UserName"] != null)
+            {
+                @Html.Action("NewBooking", "Booking")
+            }
+            else
+            {
+                <a href="@Url.Action("DangNhap", "User")" style="border-radius: 0px; display: block;">
+                    <img src="https://sonqb.com/media/2021/07/dich-vu-booking-pr-bao-sonqb.jpg" width="150%" alt="Booking Service Image" style="cursor: pointer;" onclick="redirectToLogin()"  />
+                </a>
+
+                <script>
+            function redirectToLogin() {
+                window.location.href = '@Url.Action("DangNhap", "User")';
+            }
+                </script>
+            }
         </div>
-      
+
+
 
 
     </div>

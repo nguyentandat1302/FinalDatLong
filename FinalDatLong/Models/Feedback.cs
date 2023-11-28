@@ -19,6 +19,8 @@ namespace FinalDatLong.Models
         [StringLength(255)]
         public string Feedback1 { get; set; }
 
+        public int Rating { get; set; }
+
         public virtual Patient Patient { get; set; }
     }
 }

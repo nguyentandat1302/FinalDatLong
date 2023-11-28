@@ -3,14 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fsfs3 : DbMigration
+    public partial class sdfds : DbMigration
     {
         public override void Up()
         {
+            AddColumn("dbo.ListOfMedications", "Rating", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
+            DropColumn("dbo.ListOfMedications", "Rating");
         }
     }
 }

@@ -33,24 +33,16 @@
       "Link": "/Admin/Feedback/Index",
       "IsNested": false,
       "Sequence": 4,
-      "UserRoles": [ "admin" ],
+      "UserRoles": [ "admin","doctor" ],
       "NestedItems": []
     },
-    {
-      "DisplayName": "Quản Lý Lịch hẹn",
-      "Icon": "bi-calendar-day",
-      "Link": "/Admin/Appointment/Index",
-      "IsNested": false,
-      "Sequence": 5,
-      "UserRoles": [ "doctor", "admin" ],
-      "NestedItems": []
-    },
+   
     {
       "DisplayName": "Quản Lý Đơn thuốc",
       "Icon": " bi-capsule",
       "Link": "/Admin/ListOfMedication/Index",
       "IsNested": false,
-      "Sequence": 6,
+      "Sequence": 5,
       "UserRoles": [ "doctor", "admin" ],
       "NestedItems": []
     },
@@ -59,8 +51,8 @@
       "Icon": " bi bi-card-checklist",
       "Link": "/Admin/Treatment/Index",
       "IsNested": false,
-      "Sequence": 4,
-      "UserRoles": [ "doctor" ],
+      "Sequence": 6,
+      "UserRoles": [ "doctor","admin" ],
       "NestedItems": []
     },
     {

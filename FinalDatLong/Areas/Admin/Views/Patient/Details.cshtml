@@ -1,4 +1,4 @@
-﻿@model FinalDatLong.Models.Doctor
+﻿@model FinalDatLong.Models.Patient
 
 @{
     ViewBag.Title = "Details";
@@ -8,11 +8,11 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Doctor</h4>
+    <h4>Patient</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tài Khoản
+           UserName
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            Mật khẩu
+            Password
         </dt>
 
         <dd>
@@ -36,7 +36,7 @@
         </dd>
 
         <dt>
-           Email
+            Email
         </dt>
 
         <dd>
@@ -44,41 +44,24 @@
         </dd>
 
         <dt>
-            Số điện thoại
+            PhoneNumber
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Phone)
+            @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
         <dt>
-           Avatar
+            Avatar
         </dt>
 
         <dd>
             <img style="height:200px;width:200px" src="@Model.Avatar" alt=" @Model.FullName">
         </dd>
 
-        <dt>
-          Giới Thiệu
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Introduction)
-        </dd>
-
-        <dt>
-            Chuyên Môn
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Specialization)
-        </dd>
-
     </dl>
 </div>
 <p>
-  
-    @Html.ActionLink("QUAY VỀ TRANG QUẢN LÝ DOCTOR", "Index")
-
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDPatient }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

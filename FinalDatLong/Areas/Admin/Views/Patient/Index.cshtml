@@ -1,15 +1,15 @@
 ﻿@using PagedList.Mvc;
 @using FinalDatLong.Models
-@*@model IEnumerable<FinalDatLong.Models.Doctor>*@
-@helper Truncate(string s, int length)
+@*@model IEnumerable<FinalDatLong.Models.Patient>*@
+@helper Truncate(string sa, int length)
 {
-    if (s.Length < length)
+    if (sa.Length < length)
     {
-        @s
+        @sa
     }
     else
     {
-        @s.Substring(0, length)<text>...</text>
+        @sa.Substring(0, length)<text>...</text>
     }
 }
 @{
@@ -17,53 +17,28 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<style>
-    .custom-button {
-        background-color: #4CAF50; /* Màu nền */
-        color: white; /* Màu chữ */
-        padding: 10px 20px; /* Kích thước nút */
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 5px; /* Bo góc */
-        border: 1px solid #4CAF50; /* Viền */
-        cursor: pointer;
-    }
 
-        .custom-button:hover {
-            background-color: #45a049; /* Màu nền khi hover */
-        }
-</style>
 
-<p>
-  @Html.ActionLink("Create New", "Create")  
-</p>
+
 <table class="table">
     <tr>
         <th>
-            Tài Khoản
+            UserName
         </th>
         <th>
-            Mật Khẩu
+            Password
         </th>
         <th>
-            Họ Và Tên
+            FullName
         </th>
         <th>
             Email
         </th>
         <th>
-            Số điện thoại
+            PhoneNumber
         </th>
         <th>
             Avatar
-        </th>
-        <th>
-            Giới thiệu
-        </th>
-        <th>
-            Chuyên Môn
         </th>
         <th></th>
     </tr>
@@ -81,24 +56,18 @@
                 @Truncate(item.FullName, 50)
             </td>
             <td>
-                @Truncate(item.Email, 100)
+                @Truncate(item.Email, 50)
             </td>
             <td>
-                @Truncate(item.Phone, 100)
+                @Truncate(item.PhoneNumber, 50)
             </td>
             <td>
                 <img src="@item.Avatar" style="width:50px;" />
             </td>
             <td>
-                @Truncate(item.Introduction, 200)
-            </td>
-            <td>
-                @Truncate(item.Specialization, 200)
-            </td>
-            <td>
-                <a href="@Url.Action("Edit", new { id = item.IDDoctor })" class="btn btn-outline-primary"> Edit</a>
-                <a href="@Url.Action("Details", new { id = item.IDDoctor })" class="btn btn-outline-warning"> Details</a>
-                <a href="@Url.Action("Delete", new { id = item.IDDoctor })" class="btn btn-outline-danger"> Delete</a>
+                <a href="@Url.Action("Create", new { id = item.IDPatient })" class="btn btn-outline-primary"> Create</a>
+                <a href="@Url.Action("Details", new { id = item.IDPatient })" class="btn btn-outline-warning"> Details</a>
+                <a href="@Url.Action("Delete", new { id = item.IDPatient })" class="btn btn-outline-danger"> Delete</a>
             </td>
         </tr>
     }
@@ -106,7 +75,7 @@
 </table>
 
 
-    Trang @(Model.PageCount < Model.PageNumber ? 0 :
+  Trang @(Model.PageCount < Model.PageNumber ? 0 :
 Model.PageNumber)/@Model.PageCount
 
 <div class="MenuTrang">

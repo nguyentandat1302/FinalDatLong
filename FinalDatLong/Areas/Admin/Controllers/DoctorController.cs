@@ -65,13 +65,13 @@ namespace FinalDatLong.Areas.Admin.Controllers
         }
         public ActionResult Details(int id)
         {
-            var sach = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
-            if (sach == null)
+            var doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
+            if (doctor == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
-            return View(sach);
+            return View(doctor);
         }
         [HttpGet]
         public ActionResult Delete(int id)
@@ -166,7 +166,10 @@ namespace FinalDatLong.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
             return View(doctor);
-        }   //    }
+        }
+
+       
+     
 
     }
 }
