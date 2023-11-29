@@ -10,7 +10,7 @@
       "NestedItems": []
     },
     {
-      "DisplayName": "Quản Lý Bác Sỹ",
+      "DisplayName": "Doctor Management ",
       "Icon": "bi-person-circle",
       "Link": "/Admin/Doctor/Index",
       "IsNested": false,
@@ -19,7 +19,7 @@
       "NestedItems": []
     },
     {
-      "DisplayName": "Quản Lý Bệnh Nhân",
+      "DisplayName": "Patient Management",
       "Icon": "bi-person-circle",
       "Link": "/Admin/Patient/Index",
       "IsNested": false,
@@ -28,7 +28,7 @@
       "NestedItems": []
     },
     {
-      "DisplayName": "Quản Lý Feedback",
+      "DisplayName": " Feedback Management",
       "Icon": "bi-rss",
       "Link": "/Admin/Feedback/Index",
       "IsNested": false,
@@ -36,11 +36,11 @@
       "UserRoles": [ "admin","doctor" ],
       "NestedItems": []
     },
-   
+
     {
-      "DisplayName": "Quản Lý Đơn thuốc",
+      "DisplayName": "Prescription Management",
       "Icon": " bi-capsule",
-      "Link": "/Admin/ListOfMedication/Index",
+      "Link": "/Admin/Medicine/Index",
       "IsNested": false,
       "Sequence": 5,
       "UserRoles": [ "doctor", "admin" ],

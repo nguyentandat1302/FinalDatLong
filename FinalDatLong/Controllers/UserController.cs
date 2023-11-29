@@ -74,5 +74,28 @@ namespace FinalDatLong.Controllers
             Session["UserName"] = null;
             return RedirectToAction("Index", "Booking");
         }
+
+        [HttpGet]
+        public ActionResult Feedback()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Feedback(Feedback Model)
+        {
+            ViewBag.List = from fb in db.Feedback select fb;
+            var u = (Patient)Session["UserName"];
+            Model.IDPatient = u.IDPatient;
+            db.Feedback.Add(Model);
+            db.SaveChanges();
+           
+            return View(Model);
+        }
+        public ActionResult ViewFeedback()
+        {
+            var list = from fb in db.Feedback select fb;
+            return View(list);
+        }
     }
 }

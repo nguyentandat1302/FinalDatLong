@@ -10,7 +10,7 @@ namespace FinalDatLong.Models
     public partial class Feedback
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDFeedback { get; set; }
 
         public int? IDPatient { get; set; }

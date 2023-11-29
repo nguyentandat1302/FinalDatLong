@@ -136,6 +136,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\Controllers\FeedbackController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MedicineController.cs" />
     <Compile Include="Areas\Admin\Controllers\TreatmentController.cs" />
     <Compile Include="Controllers\SpecializationController.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
@@ -150,18 +151,31 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311281449024_sdfds.cs" />
-    <Compile Include="Migrations\202311281449024_sdfds.designer.cs">
-      <DependentUpon>202311281449024_sdfds.cs</DependentUpon>
+    <Compile Include="Migrations\202311290605597_fgdsfsdas.cs" />
+    <Compile Include="Migrations\202311290605597_fgdsfsdas.designer.cs">
+      <DependentUpon>202311290605597_fgdsfsdas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311281722027_sdfdsdfsd.cs" />
-    <Compile Include="Migrations\202311281722027_sdfdsdfsd.designer.cs">
-      <DependentUpon>202311281722027_sdfdsdfsd.cs</DependentUpon>
+    <Compile Include="Migrations\202311290607250_raroi.cs" />
+    <Compile Include="Migrations\202311290607250_raroi.designer.cs">
+      <DependentUpon>202311290607250_raroi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311291027278_sfsfsfsf.cs" />
+    <Compile Include="Migrations\202311291027278_sfsfsfsf.designer.cs">
+      <DependentUpon>202311291027278_sfsfsfsf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311291053570_sdfs.cs" />
+    <Compile Include="Migrations\202311291053570_sdfs.designer.cs">
+      <DependentUpon>202311291053570_sdfs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202311291120551_sdfsdf.cs" />
+    <Compile Include="Migrations\202311291120551_sdfsdf.designer.cs">
+      <DependentUpon>202311291120551_sdfsdf.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\Medicine.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Feedback.cs" />
@@ -224,6 +238,7 @@
     <Content Include="Areas\Admin\Views\Patient\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Patient\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Feedback\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Medicine\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -270,6 +285,8 @@
     <Content Include="Views\Booking\NewBooking.cshtml" />
     <Content Include="Views\Specialization\Khoa.cshtml" />
     <Content Include="Views\Booking\ProfileDoctor.cshtml" />
+    <Content Include="Views\User\Feedback.cshtml" />
+    <Content Include="Views\User\ViewFeedback.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,11 +320,20 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311281449024_sdfds.resx">
-      <DependentUpon>202311281449024_sdfds.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311290605597_fgdsfsdas.resx">
+      <DependentUpon>202311290605597_fgdsfsdas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311281722027_sdfdsdfsd.resx">
-      <DependentUpon>202311281722027_sdfdsdfsd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202311290607250_raroi.resx">
+      <DependentUpon>202311290607250_raroi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311291027278_sfsfsfsf.resx">
+      <DependentUpon>202311291027278_sfsfsfsf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311291053570_sdfs.resx">
+      <DependentUpon>202311291053570_sdfs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311291120551_sdfsdf.resx">
+      <DependentUpon>202311291120551_sdfsdf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

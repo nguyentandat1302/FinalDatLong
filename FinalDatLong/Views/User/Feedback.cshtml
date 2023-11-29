@@ -1,0 +1,144 @@
+﻿
+@model FinalDatLong.Models.Feedback
+@{
+    ViewBag.Title = "Feedback";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .feedback-container {
+            width: 70%; /* Điều chỉnh chiều rộng tối đa cho phù hợp với màn hình laptop */
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stars {
+            margin: 20px 0;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+            .stars span {
+                color: #ddd;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            }
+
+                .stars span:hover,
+                .stars span.active {
+                    color: #ffdd00;
+                }
+
+        #feedbackInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #saveButton {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #feedbackList {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+            #feedbackList ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            #feedbackList li {
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border-radius: 4px;
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+    <form action="/User/Feedback" method="post">
+        <div class="feedback-container">
+            <h2>Đánh giá của bệnh nhân về dịch vụ</h2>
+            <div class="stars" id="stars">
+                <span class="star" onclick="rate(1)">★</span>
+                <span class="star" onclick="rate(2)">★</span>
+                <span class="star" onclick="rate(3)">★</span>
+                <span class="star" onclick="rate(4)">★</span>
+                <span class="star" onclick="rate(5)">★</span>
+            </div>
+            <input type="hidden" id="Rating" name="Rating" value="0" />
+
+            <textarea id="feedbackInput" name="Feedback1" placeholder="Nhập đánh giá của bạn"></textarea>
+            @Html.ValidationMessageFor(model => model.Feedback1, "", new { @class = "text-danger" })
+            <a type="submit" class="btn btn-info" href=" @Url.Action("ViewFeedback","User")">Lưu</a>
+            
+            <div id="feedbackList"></div>
+            @if (ViewBag.List != null)
+{
+    foreach (var item in ViewBag.List)
+    {
+        <strong>@item.Patient.FullName</strong>
+        <div class="rating">
+            Đánh giá:
+            @for (var i = 0; i < item.Rating; i++)
+            {
+                <i class="bi bi-star-fill"></i>
+            }
+        </div>
+        <div>@item.Feedback1</div>
+        <hr />
+    }
+}
+else
+{
+    <p>Không có đánh giá nào.</p>
+}
+        </div>
+    </form>
+
+    <script>
+        let currentRating = 0;
+
+        function rate(stars) {
+            currentRating = stars;
+            for (let i = 1; i <= 5; i++) {
+                const star = document.getElementById('stars').children[i - 1];
+                star.className = i <= stars ? 'star active' : 'star';
+            }
+            document.getElementById('Rating').value = currentRating;
+        }
+    </script>
+
+</body>
+</html>

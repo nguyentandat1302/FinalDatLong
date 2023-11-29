@@ -40,22 +40,18 @@ namespace FinalDatLong.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Add(Patient model, FormCollection f, HttpPostedFileBase fFileUpload)
+        public ActionResult Add(Treatment model)
         {
-
+            var d = (Doctor)Session["Doctor"];
+            model.IDDoctor = d.IDDoctor;
             if (ModelState.IsValid)
             {
-                if (fFileUpload != null)
-                {
-                    Image img = Image.FromStream(fFileUpload.InputStream, true, true);
-                    model.Avatar = Utility.ConvertImageToBase64(img);
-                }
 
-                db.Patient.Add(model);
+                db.Treatment.Add(model);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Treatment", new {Area = "Admin"});
             }
-            return View();
+            return View(model);
         }
         public ActionResult Edit(int id)
         {

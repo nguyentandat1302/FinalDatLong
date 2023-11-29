@@ -1,4 +1,5 @@
-﻿@model FinalDatLong.Models.Treatment
+﻿@using FinalDatLong.Models
+@model FinalDatLong.Models.Treatment
 
 @{
     ViewBag.Title = "Add";
@@ -128,112 +129,106 @@
             }
     </style>
 </head>
+
+
 <body>
-    <div class="detail-container">
-        <div class="profile-column">
-            <h2>Patient Profile</h2>
-            <div class="search-container">
-                <span class="detail-label">Search Patient:</span>
-                <input type="text" id="SearchPatient" placeholder="Enter patient ID" oninput="searchPatient()">
-                <div class="search-results" id="SearchResults"></div>
-            </div>
-            <div>
-                <span class="detail-label">Patient ID:</span>
-                <input type="text" id="PatientID" placeholder="Patient ID" readonly>
-            </div>
-            <div>
-                <span class="detail-label">Patient Name:</span>
-                <input type="text" id="PatientName" placeholder="Patient Name" readonly>
-            </div>
-            <div>
-                <span class="detail-label">Age:</span>
-                <input type="text" id="Age" placeholder="Age" readonly>
-            </div>
-            <div>
-                <span class="detail-label">Gender:</span>
-                <input type="text" id="Gender" placeholder="Gender" readonly>
-            </div>
-            <div>
-                <span class="detail-label">Contact:</span>
-                <input type="text" id="Contact" placeholder="Contact" readonly>
-            </div>
-            <!-- Thêm thông tin bệnh nhân khác cần thiết -->
-        </div>
+    <form action="/Treatment/Add" method="post">
+        <div class="detail-container">
+            <div class="profile-column">
 
-        <div class="detail-column">
-            <h2>Add Treatment</h2>
-            <div>
-                <span class="detail-label">Description:</span>
-                <textarea id="Description" placeholder="Enter treatment description"></textarea>
-            </div>
-            <div>
-                <span class="detail-label">Treatment Description:</span>
-                <textarea id="TreatmentDescription" placeholder="Enter detailed treatment information"></textarea>
-            </div>
-            <div>
-                <span class="detail-label">Medications:</span>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Dosage</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="MedicationTableBody">
-                        <!-- Thêm các dòng nếu có thuốc có sẵn -->
-                    </tbody>
-                </table>
-            </div>
-            <button class="save-button" onclick="saveTreatment()">Save Treatment</button>
-            <button class="back-button" onclick="goBack()">Back</button>
-        </div>
-    </div>
+                <h2>Patient Profile</h2>
+                <div>
 
+                    <span class="detail-label">Patient ID:</span>
+                    <input type="text" name="IDPatient" placeholder="Patient ID">
+                    @Html.ValidationMessageFor(model => model.IDPatient, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="detail-column">
+                <h2>Add Treatment</h2>
+                <div>
+                    <span class="detail-label">Description:</span>
+                    <textarea name="Description" placeholder="Enter treatment description"></textarea>
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    <span class="detail-label">Treatment Description:</span>
+                    <textarea name="TreatmentDescription" placeholder="Enter detailed treatment information"></textarea>
+                    @Html.ValidationMessageFor(model => model.TreatmentDescription, "", new { @class = "text-danger" })
+                </div>
+                <div class="search-container">
+                    <span class="detail-label">Search Medication:</span>
+                    <input type="text" id="SearchMedication" placeholder="Enter medication name">
+                    <div class="search-results" id="SearchResults"></div>
+                </div>
+                <div>
+                    <span class="detail-label">Medications:</span>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Dosage</th>
+                            </tr>
+                        </thead>
+                        <tbody id="MedicationTableBody">
+                            <!-- Dữ liệu thuốc được thêm vào đây -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <button class="save-button" type="submit">Save Treatment</button>
+
+                <button class="back-button">Back</button>
+            </div>
+        </div>
+    </form>
     <script>
+        // Mô phỏng dữ liệu danh sách thuốc
+        const medicationList = [
+            "Medication 1",
+            "Medication 2",
+            "Medication 3",
+            // Thêm dữ liệu khác nếu cần
+        ];
+
+        const searchMedicationInput = document.getElementById("SearchMedication");
+        const searchResultsContainer = document.getElementById("SearchResults");
+        const medicationTableBody = document.getElementById("MedicationTableBody");
+
+        searchMedicationInput.addEventListener("input", function () {
+            const searchValue = this.value.toLowerCase();
+            const filteredResults = medicationList.filter(medication => medication.toLowerCase().includes(searchValue));
+            displaySearchResults(filteredResults);
+        });
+
+        function displaySearchResults(results) {
+            searchResultsContainer.innerHTML = "";
+            results.forEach(result => {
+                const button = document.createElement("button");
+                button.textContent = result;
+                button.addEventListener("click", function () {
+                    addMedicationToTable(result);
+                    searchMedicationInput.value = "";
+                    searchResultsContainer.innerHTML = "";
+                });
+                searchResultsContainer.appendChild(button);
+            });
+        }
+
+        function addMedicationToTable(medicationName) {
+            const newRow = medicationTableBody.insertRow();
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            cell1.textContent = ""; // Để ID trống hoặc bạn có thể tạo một hệ thống quản lý ID
+            cell2.textContent = medicationName;
+            cell3.innerHTML = '<textarea placeholder="Enter dosage"></textarea>';
+        }
         function goBack() {
             // Thêm logic để quay lại trang trước đó hoặc đóng cửa sổ thoáng
             window.history.back();
-        }
-
-        function saveTreatment() {
-            // Thêm logic để lưu thông tin điều trị mới
-            alert("Treatment saved!");
-        }
-
-        function searchPatient() {
-            const searchValue = document.getElementById("SearchPatient").value;
-            const searchResultsContainer = document.getElementById("SearchResults");
-
-            // TODO: Gửi yêu cầu AJAX để tìm kiếm bệnh nhân theo ID từ Controller
-            // và cập nhật nội dung trong searchResultsContainer
-
-            // Ví dụ đơn giản:
-            const mockResults = [
-
-                { id: 1, name: "Patient 1", age: 25, gender: "Male", contact: "123-456-7890" },
-                { id: 2, name: "Patient 2", age: 30, gender: "Female", contact: "987-654-3210" }
-            ];
-
-            const resultsHtml = mockResults.map(result => `
-                        <button onclick="selectPatient(${result.id}, '${result.name}', ${result.age}, '${result.gender}', '${result.contact}')">
-                            ${result.name} - ${result.age} years old - ${result.gender}
-                        </button>
-                    `).join("");
-
-            searchResultsContainer.innerHTML = resultsHtml;
-        }
-
-        function selectPatient(id, name, age, gender, contact) {
-            document.getElementById("PatientID").value = id;
-            document.getElementById("PatientName").value = name;
-            document.getElementById("Age").value = age;
-            document.getElementById("Gender").value = gender;
-            document.getElementById("Contact").value = contact;
-
-            // Xóa kết quả tìm kiếm
-            document.getElementById("SearchResults").innerHTML = "";
         }
     </script>
 </body>

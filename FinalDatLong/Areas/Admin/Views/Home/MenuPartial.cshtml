@@ -2,7 +2,15 @@
 @model FinalDatLong.Areas.Navigation.NavigationMenu
 
 @{
-    var user = (Admin)Session["Admin"];
+    dynamic user;
+    if (Session["Admin"] != null)
+    {
+        user = (Admin)Session["Admin"];
+    }
+    else
+    {
+        user = (Doctor)Session["Doctor"];
+    }
 }
 
 

@@ -21,6 +21,8 @@ namespace FinalDatLong.Models
         public virtual DbSet<Patient> Patient { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Treatment> Treatment { get; set; }
+        public virtual DbSet<Medicine> Medicine { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -16,7 +16,7 @@ namespace FinalDatLong.Models
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDTreatment { get; set; }
 
         public int? IDDoctor { get; set; }

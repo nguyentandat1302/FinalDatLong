@@ -17,7 +17,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            if (Session["Admin"] == null)
+            if (Session["Admin"] == null && Session["Doctor"]==null)
                return  RedirectToAction("Login");
 
             return View();
@@ -34,6 +34,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
             string UserName = f["UserName"];
             string Password = f["Password"];
             var admin = db.Admin.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
+
             if (admin != null)
             {
                 Session["Admin"] = admin;
@@ -41,7 +42,15 @@ namespace FinalDatLong.Areas.Admin.Controllers
             }
             else
             {
-                ViewBag.ThongBao = "Sai UserName va Password";
+                var l = db.Doctor.ToList();
+                var d = db.Doctor.FirstOrDefault(x => x.UserName == UserName && x.Password == Password);
+                if (d != null)
+                {
+                    Session["Doctor"] = d;
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                    ViewBag.ThongBao = "Sai UserName va Password";
             }
             return View();
         }
@@ -56,6 +65,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
         public ActionResult Logout()
         {
             Session["Admin"] = null;
+            Session["Doctor"] = null;
             return RedirectToAction("Index");
         }
     }

@@ -3,15 +3,16 @@
 @*@model IEnumerable<FinalDatLong.Models.Patient>*@
 @helper Truncate(string sa, int length)
 {
+    sa = sa ?? "";
     if (sa.Length < length)
     {
         @sa
-    }
+        }
     else
     {
         @sa.Substring(0, length)<text>...</text>
+        }
     }
-}
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
