@@ -89,7 +89,7 @@
 <body>
     <form action="/User/Feedback" method="post">
         <div class="feedback-container">
-            <h2>Đánh giá của bệnh nhân về dịch vụ</h2>
+            <h2>Patient reviews of the service</h2>
             <div class="stars" id="stars">
                 <span class="star" onclick="rate(1)">★</span>
                 <span class="star" onclick="rate(2)">★</span>
@@ -99,9 +99,9 @@
             </div>
             <input type="hidden" id="Rating" name="Rating" value="0" />
 
-            <textarea id="feedbackInput" name="Feedback1" placeholder="Nhập đánh giá của bạn"></textarea>
+            <textarea id="feedbackInput" name="Feedback1" placeholder="Enter your feedback"></textarea>
             @Html.ValidationMessageFor(model => model.Feedback1, "", new { @class = "text-danger" })
-            <a type="submit" class="btn btn-info" href=" @Url.Action("ViewFeedback","User")">Lưu</a>
+            <a type="submit" class="btn btn-info" href=" @Url.Action("ViewFeedback","User")">Save</a>
             
             <div id="feedbackList"></div>
             @if (ViewBag.List != null)
@@ -110,7 +110,7 @@
     {
         <strong>@item.Patient.FullName</strong>
         <div class="rating">
-            Đánh giá:
+            Evaluate:
             @for (var i = 0; i < item.Rating; i++)
             {
                 <i class="bi bi-star-fill"></i>
@@ -122,7 +122,7 @@
 }
 else
 {
-    <p>Không có đánh giá nào.</p>
+        <p>No reviews available.</p>
 }
         </div>
     </form>

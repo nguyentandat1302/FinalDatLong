@@ -141,10 +141,10 @@
 </head>
 <body>
     <div class="feedback-container">
-        <h2>Đánh giá của bệnh nhân về dịch vụ</h2>
+        <h2>Patient reviews of the service</h2>
 
         <div id="allFeedback">
-            <h3>Tất cả đánh giá</h3>
+            <h3>All Reviews</h3>
             @foreach (var item in Model)
             {
 
@@ -152,7 +152,7 @@
 
 
                 <div class="rating">
-                    Đánh giá:
+                    Evaluate:
                     @for (var i = 0; i < item.Rating; i++)
                     {
                         <i class="bi bi-star-fill"></i>

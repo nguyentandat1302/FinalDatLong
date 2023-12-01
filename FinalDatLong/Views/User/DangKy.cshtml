@@ -24,7 +24,7 @@
 
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label">Tài Khoản</label>
+                                    <label class="form-label">UserName</label>
                                     <input type="text" name="UserName" class="form-control form-control-lg" />
                                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                                 </div>
@@ -35,13 +35,13 @@
                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label">Mật Khẩu</label>
+                                    <label class="form-label">Password</label>
                                     <input type="password" name="Password" class="form-control form-control-lg" />
 
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label">Nhập Lại Mật Khẩu</label>
+                                    <label class="form-label">Confirm Password</label>
                                     <input type="password" name="MatKhauNL" class="form-control form-control-lg" />
 
                                     @Html.ValidationMessageFor(model => model.MatKhauNL, "", new { @class = "text-danger" })

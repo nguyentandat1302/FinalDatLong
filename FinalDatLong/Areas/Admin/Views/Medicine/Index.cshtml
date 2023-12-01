@@ -84,25 +84,27 @@
 </head>
 <body>
     <div id="drugList">
-        <h2>Danh sách thuốc</h2>
+        <h2>Drug List</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Tên thuốc</th>
-                    <th>Loại thuốc</th>
+                    <th>Drug Name</th>
+                    <th>Drug Type</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody id="drugTableBody"></tbody>
         </table>
-        <label for="drugName">Tên thuốc:</label>
-        <input type="text" id="drugName" placeholder="Nhập tên thuốc">
 
-        <label for="drugType">Loại thuốc:</label>
-        <input type="text" id="drugType" placeholder="Nhập loại thuốc">
+        <label for="drugName">Drug Name:</label>
+        <input type="text" id="drugName" placeholder="Enter drug name">
 
-        <button onclick="addDrug()">Thêm thuốc</button>
+        <label for="drugType">Drug Type:</label>
+        <input type="text" id="drugType" placeholder="Enter drug type">
+
+        <button onclick="addDrug()">Add Drug</button>
     </div>
+
 
     <script>
         function addDrug() {
@@ -110,7 +112,7 @@
             var drugType = document.getElementById('drugType').value;
 
             if (drugName !== '' && drugType !== '') {
-var table = document.getElementById('drugTableBody');
+                var table = document.getElementById('drugTableBody');
                 var newRow = table.insertRow(table.rows.length);
                 var cell1 = newRow.insertCell(0);
                 var cell2 = newRow.insertCell(1);
