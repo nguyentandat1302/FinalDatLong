@@ -90,14 +90,13 @@
 
 
                         <div class="btn-group">
-                            <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown">
-                                Profile
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="@Url.Action("PatientProfile", "Booking")">Profile</a></li>
-                                <!-- Add more items as needed -->
-                            </ul>
-                        </div>
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown">
+                            Profile
+                        </button>
+                        <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="@Url.Action("PatientProfile", "Booking")">Profile</a></li>
+                        </ul>
+                    </div>
 
                         <a href="@Url.Action("Feedback", "User", new { id = ViewBag.IDPatient })" type="button" class="btn btn-outline-success" style="border-radius:0px">Feedback</a>
                         <a href="@Url.Action("DangXuat","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Log out</a>
@@ -105,6 +104,16 @@
                     }
                     else
                     {
+
+                        @*<div class="btn-group">
+                            <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown">
+                                Profile
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("PatientProfile", "Booking")">Profile</a></li>
+                          
+                            </ul>
+                        </div>*@
 
                         <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success " style="border-radius:0px">Register</a>
 

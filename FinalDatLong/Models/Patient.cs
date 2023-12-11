@@ -35,7 +35,7 @@
 
 
         [NotMapped]
-        [Compare("Password", ErrorMessage = " Mật Khẩu nhập lại không khớp")]
+        //[Compare("Password")]
         public string MatKhauNL { get; set; }
 
         [StringLength(255)]
@@ -45,9 +45,8 @@
         [StringLength(100)]
         public string Email { get; set; }
 
+        [StringLength(100, ErrorMessage = " Số điện thoại không đúng , không vượt quá 11 số ", MinimumLength = 11)]
 
-
-        [StringLength(100)]
         public string PhoneNumber { get; set; }
     
 

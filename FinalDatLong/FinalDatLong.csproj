@@ -151,25 +151,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202311290605597_fgdsfsdas.cs" />
-    <Compile Include="Migrations\202311290605597_fgdsfsdas.designer.cs">
-      <DependentUpon>202311290605597_fgdsfsdas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311290607250_raroi.cs" />
-    <Compile Include="Migrations\202311290607250_raroi.designer.cs">
-      <DependentUpon>202311290607250_raroi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311291027278_sfsfsfsf.cs" />
-    <Compile Include="Migrations\202311291027278_sfsfsfsf.designer.cs">
-      <DependentUpon>202311291027278_sfsfsfsf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311291053570_sdfs.cs" />
-    <Compile Include="Migrations\202311291053570_sdfs.designer.cs">
-      <DependentUpon>202311291053570_sdfs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202311291120551_sdfsdf.cs" />
-    <Compile Include="Migrations\202311291120551_sdfsdf.designer.cs">
-      <DependentUpon>202311291120551_sdfsdf.cs</DependentUpon>
+    <Compile Include="Migrations\202312110929149_dadaua.cs" />
+    <Compile Include="Migrations\202312110929149_dadaua.designer.cs">
+      <DependentUpon>202312110929149_dadaua.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -275,7 +259,6 @@
     <Content Include="Views\Shared\SlideShow.cshtml" />
     <Content Include="Views\Shared\Video.cshtml" />
     <Content Include="Views\Shared\Card.cshtml" />
-    <Content Include="Views\Shared\PatientProfile.cshtml" />
     <Content Include="Views\Shared\Contact.cshtml" />
     <Content Include="Views\ALL\Contacts.cshtml" />
     <Content Include="Views\ALL\AboutUs.cshtml" />
@@ -287,6 +270,8 @@
     <Content Include="Views\Booking\ProfileDoctor.cshtml" />
     <Content Include="Views\User\Feedback.cshtml" />
     <Content Include="Views\User\ViewFeedback.cshtml" />
+    <Content Include="Views\Booking\PatientProfile.cshtml" />
+    <Content Include="Views\Booking\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -320,20 +305,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202311290605597_fgdsfsdas.resx">
-      <DependentUpon>202311290605597_fgdsfsdas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311290607250_raroi.resx">
-      <DependentUpon>202311290607250_raroi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311291027278_sfsfsfsf.resx">
-      <DependentUpon>202311291027278_sfsfsfsf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311291053570_sdfs.resx">
-      <DependentUpon>202311291053570_sdfs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202311291120551_sdfsdf.resx">
-      <DependentUpon>202311291120551_sdfsdf.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312110929149_dadaua.resx">
+      <DependentUpon>202312110929149_dadaua.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

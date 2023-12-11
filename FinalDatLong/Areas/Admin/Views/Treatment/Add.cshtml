@@ -140,7 +140,7 @@
                 <div>
 
                     <span class="detail-label">Patient ID:</span>
-                    <input type="text" name="IDPatient" placeholder="Patient ID">
+                    <input type="text" name="IDPatient" placeholder="Patient ID" >
                     @Html.ValidationMessageFor(model => model.IDPatient, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -149,12 +149,12 @@
                 <h2>Add Treatment</h2>
                 <div>
                     <span class="detail-label">Description:</span>
-                    <textarea name="Description" placeholder="Enter treatment description"></textarea>
-                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    <textarea name="Description" placeholder="Enter treatment description" ></textarea>
+                    @Html.ValidationMessageFor(model => model.Description, "text-danger", new { @class = "text-danger" })
                 </div>
                 <div>
                     <span class="detail-label">Treatment Description:</span>
-                    <textarea name="TreatmentDescription" placeholder="Enter detailed treatment information"></textarea>
+                    <textarea name="TreatmentDescription" placeholder="Enter detailed treatment information" ></textarea>
                     @Html.ValidationMessageFor(model => model.TreatmentDescription, "", new { @class = "text-danger" })
                 </div>
                 <div class="search-container">

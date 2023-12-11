@@ -1,4 +1,4 @@
-namespace FinalDatLong.Models
+﻿namespace FinalDatLong.Models
 {
     using System;
     using System.Collections.Generic;
@@ -21,13 +21,17 @@ namespace FinalDatLong.Models
 
         public int? IDDoctor { get; set; }
 
+        [Required(ErrorMessage = "Trường này không được để trống")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "Chỉ được nhập số không được nhập kí tự hoặc chữ cái")]
         public int? IDPatient { get; set; }
 
+        [Required(ErrorMessage = "Trường này không được để trống")]
         [StringLength(255)]
         public string Description { get; set; }
-
+        
         public virtual Doctor Doctor { get; set; }
 
+        [Required(ErrorMessage = "Trường này không được để trống")]
         public string TreatmentDescription { get; set; }
 
 
