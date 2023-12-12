@@ -44,6 +44,13 @@ namespace FinalDatLong.Areas.Admin.Controllers
         {
             var d = (Doctor)Session["Doctor"];
             model.IDDoctor = d.IDDoctor;
+            
+            var kh = db.Patient.FirstOrDefault(k => k.IDPatient == model.IDPatient);
+            if (kh == null)
+            {
+                ModelState.AddModelError("IDPatient", "Khách hàng không tồn tại");
+                return View();
+            }
             if (ModelState.IsValid)
             {
 
@@ -51,7 +58,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index","Treatment", new {Area = "Admin"});
             }
-            return View(model);
+            return View();
         }
         public ActionResult Edit(int id)
         {

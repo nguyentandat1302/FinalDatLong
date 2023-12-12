@@ -52,7 +52,7 @@
       "Link": "/Admin/Treatment/Index",
       "IsNested": false,
       "Sequence": 6,
-      "UserRoles": [ "doctor","admin" ],
+      "UserRoles": [ "doctor" ],
       "NestedItems": []
     },
     {

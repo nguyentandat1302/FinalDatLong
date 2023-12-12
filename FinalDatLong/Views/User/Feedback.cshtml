@@ -88,44 +88,50 @@
 </head>
 <body>
     <form action="/User/Feedback" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="feedback-container">
             <h2>Patient reviews of the service</h2>
-            <div class="stars" id="stars">
-                <span class="star" onclick="rate(1)">★</span>
-                <span class="star" onclick="rate(2)">★</span>
-                <span class="star" onclick="rate(3)">★</span>
-                <span class="star" onclick="rate(4)">★</span>
-                <span class="star" onclick="rate(5)">★</span>
+            <div>
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">★</span>
+                    <span class="star" onclick="rate(2)">★</span>
+                    <span class="star" onclick="rate(3)">★</span>
+                    <span class="star" onclick="rate(4)">★</span>
+                    <span class="star" onclick="rate(5)">★</span>
+                </div>
+                <input type="hidden" id="Rating" name="Rating" value="0" />
+                @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
             </div>
-            <input type="hidden" id="Rating" name="Rating" value="0" />
+            <div>
+                <textarea id="feedbackInput" name="Feedback1" placeholder="Enter your feedback"></textarea>
+                @Html.ValidationMessageFor(model => model.Feedback1, "", new { @class = "text-danger" })
+            </div>
+            <button type="submit" class="btn btn-info" href=" @Url.Action("ViewFeedback","User")">Save</button>
 
-            <textarea id="feedbackInput" name="Feedback1" placeholder="Enter your feedback"></textarea>
-            @Html.ValidationMessageFor(model => model.Feedback1, "", new { @class = "text-danger" })
-            <a type="submit" class="btn btn-info" href=" @Url.Action("ViewFeedback","User")">Save</a>
-            
-            <div id="feedbackList"></div>
-            @if (ViewBag.List != null)
-{
-    foreach (var item in ViewBag.List)
-    {
-        <strong>@item.Patient.FullName</strong>
-        <div class="rating">
-            Evaluate:
-            @for (var i = 0; i < item.Rating; i++)
+            @*<div id="feedbackList"></div>
+                    @if (ViewBag.List != null)
+        {
+            foreach (var item in ViewBag.List)
             {
-                <i class="bi bi-star-fill"></i>
+                <strong>@item.Patient.FullName</strong>
+                <div class="rating">
+                    Evaluate:
+                    @for (var i = 0; i < item.Rating; i++)
+                    {
+                        <i class="bi bi-star-fill"></i>
+                    }
+                </div>
+                <div>@item.Feedback1</div>
+                <hr />
             }
-        </div>
-        <div>@item.Feedback1</div>
-        <hr />
-    }
-}
-else
-{
-        <p>No reviews available.</p>
-}
-        </div>
-    </form>
+        }
+        else
+        {
+                <p>No reviews available.</p>
+        }
+                </div>*@
+       </div>
+</form>
 
     <script>
         let currentRating = 0;
@@ -137,6 +143,7 @@ else
                 star.className = i <= stars ? 'star active' : 'star';
             }
             document.getElementById('Rating').value = currentRating;
+            // neu = 0 thi lam sao de no bao loi day thay
         }
     </script>
 

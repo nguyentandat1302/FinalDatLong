@@ -27,7 +27,7 @@
         [StringLength(50)]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Mật khẩu kông được để trống")]
+        [Required(ErrorMessage = "Mật khẩu không được để trống")]
         [StringLength(255, ErrorMessage = " Mật Khẩu từ 8 đến 255 kí tự ", MinimumLength = 8)]
         [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
      ErrorMessage = "Mật khẩu tối thiểu tám ký tự, ít nhất một chữ hoa, một chữ thường, một số và một ký tự đặc biệt")]
@@ -45,10 +45,11 @@
         [StringLength(100)]
         public string Email { get; set; }
 
-        [StringLength(100, ErrorMessage = " Số điện thoại không đúng , không vượt quá 11 số ", MinimumLength = 11)]
-
+        [StringLength(100, ErrorMessage = "Số điện thoại không hợp lệ vui lòng nhập lại", MinimumLength = 7)]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Vui lòng nhập số điện thoại hợp lệ")]
         public string PhoneNumber { get; set; }
-    
+
+
 
         public string Avatar { get; set; }
 

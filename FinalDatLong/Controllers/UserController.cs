@@ -84,11 +84,17 @@ namespace FinalDatLong.Controllers
         [HttpPost]
         public ActionResult Feedback(Feedback Model)
         {
-            ViewBag.List = from fb in db.Feedback select fb;
+            //ViewBag.List = from fb in db.Feedback select fb;
             var u = (Patient)Session["UserName"];
             Model.IDPatient = u.IDPatient;
-            db.Feedback.Add(Model);
-            db.SaveChanges();
+            if(ModelState.IsValid)
+            {
+
+                db.Feedback.Add(Model);
+                db.SaveChanges();
+            }
+            //Model.Patient = u;
+          
            
             return View(Model);
         }

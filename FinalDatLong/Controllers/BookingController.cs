@@ -62,11 +62,11 @@ namespace FinalDatLong.Controllers
         {
             return PartialView();
         }
-        //public ActionResult ProfileDoctor(int IDDoctor)
-        //{
-        //    var doctor = db.Doctor.FirstOrDefault(s => s.IDDoctor == IDDoctor);
-        //    return View(doctor);
-        //}
+        public ActionResult ProfileDoctor(int IDDoctor)
+        {
+            var doctor = db.Doctor.FirstOrDefault(s => s.IDDoctor == IDDoctor);
+            return View(doctor);
+        }
 
         public static string ConverImageToBase64(string path)
         {

@@ -88,29 +88,46 @@
                     @if (Session["UserName"] != null)
                     {
 
-                        <!-- Example single danger button -->
 
 
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown">
-                                Profile
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="@Url.Action("PatientProfile", "Booking")">Profile</a></li>
-                                <!-- Add more items as needed -->
-                            </ul>
-                        </div>
+                        <a href="@Url.Action("PatientProfile", "Booking")" type="button" class="btn btn-outline-success" style="border-radius:0px">
+                            Profile <i class="bi bi-person-badge"></i>
+                        </a>
 
-                        <a href="@Url.Action("Feedback", "User", new { id = ViewBag.IDPatient })" type="button" class="btn btn-outline-success" style="border-radius:0px">Feedback</a>
-                        <a href="@Url.Action("DangXuat","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Log out</a>
+                        <a href="@Url.Action("ViewFeedback","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">
+                            View Feedback <i class="bi bi-chat-left-dots-fill"></i>
+                        </a>
+
+                        <a href="@Url.Action("Feedback", "User", new { id = ViewBag.IDPatient })" type="button" class="btn btn-outline-success" style="border-radius:0px">
+                            Feedback <i class="bi bi-chat-left-dots-fill"></i>
+                        </a>
+
+                        <a href="@Url.Action("DangXuat","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">
+                            Log out <i class="bi bi-box-arrow-right"></i>
+                        </a>
+
 
                     }
                     else
                     {
 
-                        <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success " style="border-radius:0px">Register</a>
+                        @*<div class="btn-group">
+                <button type="button" class="btn btn-outline-success" data-bs-toggle="dropdown">
+                    Profile
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="@Url.Action("PatientProfile", "Booking")">Profile</a></li>
 
-                        <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">Log in</a>
+                </ul>
+            </div>*@
+
+                        <a href="@Url.Action("DangKy","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">
+                            Register <i class="bi bi-r-square-fill"></i>
+                        </a>
+
+                        <a href="@Url.Action("DangNhap","User")" type="button" class="btn btn-outline-success" style="border-radius:0px">
+                            Log In <i class="bi bi-box-arrow-in-left"></i>
+                        </a>
 
                     }
 
