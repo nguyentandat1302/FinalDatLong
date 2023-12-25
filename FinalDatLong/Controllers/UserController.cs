@@ -1,6 +1,7 @@
 ﻿using FinalDatLong.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -102,6 +103,44 @@ namespace FinalDatLong.Controllers
         {
             var list = from fb in db.Feedback select fb;
             return View(list);
+        }
+        public ActionResult CurrentPassword()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ForgotPassword()
+        {
+            return View(); 
+        }
+        [HttpPost]
+        public ActionResult ForgotPassword(string username, string email)
+        {
+            // Kiểm tra xem username có tồn tại và đúng hay không
+            bool isUsernameExistAndCorrect = db.Patient.Any(u => u.UserName == username);
+
+            // Kiểm tra xem email có tồn tại và đúng hay không
+            bool isEmailExistAndCorrect = db.Patient.Any(u => u.Email == username);
+
+
+            if (isUsernameExistAndCorrect)
+            {
+               
+                return RedirectToAction("Error");
+            }
+            else if (isEmailExistAndCorrect)
+            {
+                // Gửi email đặt lại mật khẩu hoặc thực hiện các bước khác để xác nhận
+                // Chuyển hướng đến trang xác nhận hoặc thông báo thành công
+                return RedirectToAction("Error");
+            }
+            else
+            {
+               
+                ModelState.AddModelError(string.Empty,"Invalid username or email.");
+                return View();
+            }
         }
     }
 }

@@ -31,12 +31,8 @@ Layout = "~/Views/Shared/LayoutNavbar.cshtml";
                                     <input type="password" name="Password" class="form-control form-control-lg" />
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                 </div>
-
-                                <div class="form-check d-flex justify-content-center mb-5">
-                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                                    <label class="form-check-label" for="form2Example3g">
-                                        Remember password <a href="#!" class="text-body"><u>Forgot Password</u></a>
-                                    </label>
+                                <div class="form-outline mb-4">
+                                    <a href="@Url.Action("ForgotPassword","User")" class="text-bg-warning"><u>Forgot Password</u></a>
                                 </div>
 
 
