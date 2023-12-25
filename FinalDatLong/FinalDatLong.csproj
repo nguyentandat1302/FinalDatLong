@@ -155,6 +155,10 @@
     <Compile Include="Migrations\202312121637084_qetrt.designer.cs">
       <DependentUpon>202312121637084_qetrt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312251758346_dfgj.cs" />
+    <Compile Include="Migrations\202312251758346_dfgj.designer.cs">
+      <DependentUpon>202312251758346_dfgj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Appointment.cs" />
@@ -309,6 +313,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312121637084_qetrt.resx">
       <DependentUpon>202312121637084_qetrt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312251758346_dfgj.resx">
+      <DependentUpon>202312251758346_dfgj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

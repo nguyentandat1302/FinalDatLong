@@ -10,12 +10,14 @@ namespace FinalDatLong.Models
     public partial class Booking
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDBooking { get; set; }
 
         public int? IDPatient { get; set; }
 
         public int? IDDoctor { get; set; }
+
+        public bool Accept { get; set; }
 
         public DateTime? Datetime { get; set; }
 

@@ -19,11 +19,20 @@
       "NestedItems": []
     },
     {
+      "DisplayName": "Booking Management ",
+      "Icon": "bi bi-journal-medical",
+      "Link": "/Admin/Doctor/Index",
+      "IsNested": false,
+      "Sequence": 3,
+      "UserRoles": [ "admin" ],
+      "NestedItems": []
+    },
+    {
       "DisplayName": "Patient Management",
       "Icon": "bi-person-circle",
       "Link": "/Admin/Patient/Index",
       "IsNested": false,
-      "Sequence": 3,
+      "Sequence": 4,
       "UserRoles": [ "admin" ],
       "NestedItems": []
     },
@@ -32,8 +41,8 @@
       "Icon": "bi-rss",
       "Link": "/Admin/Feedback/Index",
       "IsNested": false,
-      "Sequence": 4,
-      "UserRoles": [ "admin","doctor" ],
+      "Sequence": 5,
+      "UserRoles": [ "admin", "doctor" ],
       "NestedItems": []
     },
 
@@ -42,7 +51,7 @@
       "Icon": " bi-capsule",
       "Link": "/Admin/Medicine/Index",
       "IsNested": false,
-      "Sequence": 5,
+      "Sequence": 6,
       "UserRoles": [ "doctor", "admin" ],
       "NestedItems": []
     },
@@ -51,7 +60,7 @@
       "Icon": " bi bi-card-checklist",
       "Link": "/Admin/Treatment/Index",
       "IsNested": false,
-      "Sequence": 6,
+      "Sequence": 7,
       "UserRoles": [ "doctor" ],
       "NestedItems": []
     },
@@ -60,7 +69,7 @@
       "Icon": "bi-box-arrow-right",
       "Link": "/Admin/Home/Logout",
       "IsNested": false,
-      "Sequence": 7,
+      "Sequence": 8,
       "UserRoles": [ "doctor", "admin" ],
       "NestedItems": []
     }

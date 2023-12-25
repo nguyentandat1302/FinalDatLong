@@ -7,13 +7,13 @@ namespace FinalDatLong.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class qetrt : IMigrationMetadata
+    public sealed partial class dfgj : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(qetrt));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(dfgj));
         
         string IMigrationMetadata.Id
         {
-            get { return "202312121637084_qetrt"; }
+            get { return "202312251758346_dfgj"; }
         }
         
         string IMigrationMetadata.Source
