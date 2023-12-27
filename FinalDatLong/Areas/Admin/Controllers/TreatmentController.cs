@@ -27,12 +27,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
             var patient = db.Treatment.FirstOrDefault(s => s.IDPatient == id);
             return View(patient);
         }
-        //public ActionResult Add()
-        //{
-        //    //var lispa = from patient in db.Patient select patient;
-
-        //    return View();
-        //}
+      
         [HttpGet]
         public ActionResult Add()
         {
@@ -64,6 +59,35 @@ namespace FinalDatLong.Areas.Admin.Controllers
         {
             var patient = db.Treatment.FirstOrDefault(s => s.IDPatient == id);
             return View(patient);
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var Treatment = db.Treatment.SingleOrDefault(n => n.IDTreatment == id);
+            if (Treatment == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(Treatment);
+        }
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection f)
+        {
+            var Treatment = db.Treatment.SingleOrDefault(n => n.IDTreatment == id);
+            if (Treatment == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+
+
+            db.Treatment.Remove(Treatment);
+            db.SaveChanges();
+
+
+
+            return RedirectToAction("Index");
         }
     }
 }

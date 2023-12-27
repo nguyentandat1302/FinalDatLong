@@ -144,6 +144,10 @@
         <h2>Patient reviews of the service</h2>
 
         <div id="allFeedback">
+            <div>
+                <strong>Average Rating:</strong> @ViewBag.AverageRating    |
+                <strong>Total Ratings:</strong> @ViewBag.TotalRatings
+            </div>
             <h3>All Reviews</h3>
             @foreach (var item in Model)
             {
@@ -160,6 +164,7 @@
                 </div>
                 <div>@item.Feedback1</div>
 
+                <a href="@Url.Action("Delete", "Feedback" , new {id = item.IDFeedback}) " class="btn btn-primary" role="button">Xóa</a>
                 <hr>
             }
         </div>

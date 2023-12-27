@@ -115,26 +115,40 @@ namespace FinalDatLong.Controllers
             return View(); 
         }
         [HttpPost]
-        public ActionResult ForgotPassword(string username, string email)
-        {
-            // Kiểm tra xem username có tồn tại và đúng hay không
-            bool isUsernameExistAndCorrect = db.Patient.Any(u => u.UserName == username);
+        public ActionResult ForgotPassword(Patient model)/// em khai bao co 2 tham so nhung khi goi ko co nen 
+        {// ko vao action nay
+         // Kiểm tra xem username có tồn tại và đúng hay không
+            var patient = db.Patient.FirstOrDefault(u => u.UserName == model.Email && u.Email == model.Email);
 
-            // Kiểm tra xem email có tồn tại và đúng hay không
-            bool isEmailExistAndCorrect = db.Patient.Any(u => u.Email == username);
-
-
-            if (isUsernameExistAndCorrect)
+            if (patient == null)
             {
+                ViewBag["ThongBao"] = "Username và email không tồn tại"; // Hien thi viewbag ngoai view
+                return View();
+            }
+
+
+            // Thay co viec nhe va phan em lam theo cac buoc
+            //Trong CSDL bang Paiteint them truong token
+            //Dung Guid de phat sinh chuoi token
+            // len mang tim hieu ham Guid => token
+            //Update token cho use nay moi ma sinh
+            //Gửi mail voi 2 tham so id = id cua user va token = moi sinh (Học lý thuyết da hướng dẫn rồi)
+            // Với noi dung link reset: http:\.....\resetPass?id=?&&token=?...
+            //Tạo moi con trolser moi resetpass => voi view resetpast chi gom 2 trường pass va passconfrim
+            //Con troler nay kiem tra id va token hop le thi moi cho nhap pass moi va cap nhat vao csdl
+            //Em tham kkhao tre n mang nhe
+
+            //if (isUsernameExistAndCorrect)
+            //{
                
-                return RedirectToAction("Error");
-            }
-            else if (isEmailExistAndCorrect)
-            {
-                // Gửi email đặt lại mật khẩu hoặc thực hiện các bước khác để xác nhận
-                // Chuyển hướng đến trang xác nhận hoặc thông báo thành công
-                return RedirectToAction("Error");
-            }
+            //    return RedirectToAction("Error");
+            //}
+            //else if (isEmailExistAndCorrect)
+            //{
+            //    // Gửi email đặt lại mật khẩu hoặc thực hiện các bước khác để xác nhận
+            //    // Chuyển hướng đến trang xác nhận hoặc thông báo thành công
+            //    return RedirectToAction("Error");
+            //}
             else
             {
                

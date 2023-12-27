@@ -1,0 +1,69 @@
+﻿@model IEnumerable<FinalDatLong.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Doctor
+        </th>
+        <th>
+            Patient
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Accept)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datetime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Doctor.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient.UserName)
+        </td>
+        <td>
+            @if (item.Accept == true)
+            {
+                <span class="text-success">Accept</span>
+            }
+            else if (item.Accept == false)
+            {
+                <span class="text-danger">Refuse</span>
+            }
+            else
+            {
+            <span class="text-danger">Pending</span>
+            }
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datetime)
+        </td>
+        <td>
+            <button class="btn btn-outline-primary">Accept</button> ||
+            <button class="btn btn-outline-danger">Refuse</button>
+        </td>
+    </tr>
+}
+
+</table>

@@ -21,7 +21,7 @@
     {
       "DisplayName": "Booking Management ",
       "Icon": "bi bi-journal-medical",
-      "Link": "/Admin/Doctor/Index",
+      "Link": "/Admin/Booking/Index",
       "IsNested": false,
       "Sequence": 3,
       "UserRoles": [ "admin" ],
@@ -42,7 +42,7 @@
       "Link": "/Admin/Feedback/Index",
       "IsNested": false,
       "Sequence": 5,
-      "UserRoles": [ "admin", "doctor" ],
+      "UserRoles": [ "admin" ],
       "NestedItems": []
     },
 

@@ -63,7 +63,7 @@
     <p>
         @Html.ActionLink("Create", "Add", null, new { @class = "btn btn-outline-info" })
     </p>
-    </p>
+
     <h2>Treatment Information</h2>
 
     <table>
@@ -103,7 +103,7 @@
                     <td>
                         <a href="@Url.Action("Edit","Treatment" , new {id = item.IDPatient} )" class="btn btn-warning" role="button">Sửa</a>
                         <a href="@Url.Action("Detail", "Treatment" , new {id = item.IDPatient}) " class="btn btn-primary" role="button">Chi tiết</a>
-                        <a href="#" class="btn btn-danger" role="button">Xóa</a>
+                        <a href="@Url.Action("Delete", "Treatment" , new {id = item.IDTreatment})" class="btn btn-danger" role="button">Xóa</a>
                     </td>
                 </tr>
             }

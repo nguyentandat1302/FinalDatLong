@@ -62,11 +62,59 @@ namespace FinalDatLong.Controllers
         {
             return PartialView();
         }
-        public ActionResult ProfileDoctor(int IDDoctor)
+        [HttpGet]
+        public ActionResult ProfileDoctor(int id)
         {
-            var doctor = db.Doctor.FirstOrDefault(s => s.IDDoctor == IDDoctor);
+            var doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
+            Booking Booking = new Booking();
+            if (doctor == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            
             return View(doctor);
         }
+
+        [HttpPost]
+        public ActionResult ProfileDoctor(int id ,FormCollection f)
+        {
+            Booking Booking = new Booking();
+            var doctor = db.Doctor.Find(id);
+
+            if (doctor == null)
+            {
+                return HttpNotFound();
+            }
+
+            if (Session["UserName"] != null)
+            {
+                var patient = (Patient)Session["UserName"];
+                // Lấy thông tin hồ sơ từ cơ sở dữ liệu dựa trên IDPatient
+
+                if (patient != null)
+                {
+                    Booking.Patient = patient;
+                    Booking.IDPatient = patient.IDPatient;
+                }
+                else
+                {
+                    return RedirectToAction("Error");
+                }
+            }
+            
+            Booking.IDDoctor = id;
+            Booking.Doctor = doctor;
+
+            if (ModelState.IsValid)
+            {
+                db.Booking.Add(Booking);
+                db.SaveChanges();
+            }
+            return View();
+        }
+
+
 
         public static string ConverImageToBase64(string path)
         {
@@ -82,6 +130,8 @@ namespace FinalDatLong.Controllers
                 }
             }
         }
+
+
         public ActionResult PatientProfile()
         {
 
@@ -89,7 +139,6 @@ namespace FinalDatLong.Controllers
             {
                 var patient = (Patient)Session["UserName"];
                 // Lấy thông tin hồ sơ từ cơ sở dữ liệu dựa trên IDPatient
-                //var existingPatient = db.Patient.Find(patient.IDPatient);
                 patient.MatKhauNL = patient.Password;
 
                 if (patient != null)
@@ -125,7 +174,6 @@ namespace FinalDatLong.Controllers
                 db.Patient.AddOrUpdate(model);
                 db.SaveChanges();
                 Session["UserName"] = model;
-                //return View(model);
             }
             
             

@@ -120,7 +120,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
+            Doctor doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
             if (doctor == null)
             {
                 Response.StatusCode = 404;
@@ -133,36 +133,15 @@ namespace FinalDatLong.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(FormCollection f, HttpPostedFileBase fFileUpload)
+        public ActionResult Edit(int id, HttpPostedFileBase fFileUpload)
         {
-            var doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == int.Parse(f["iMaSach"]));
-          
+            Doctor doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
+
             if (ModelState.IsValid)
             {
-                if (fFileUpload != null)
-                {
-
-                    var sFileName = Path.GetFileName(fFileUpload.FileName);
-
-                    var path = Path.Combine(Server.MapPath("~/Images"), sFileName);
-                    //Kiểm tra file đã tồn tại chưa
-                    if (!System.IO.File.Exists(path))
-                    {
-                        fFileUpload.SaveAs(path);
-                    }
-                    doctor.Avatar = sFileName;
-                }
-                //Lưu Sach vào CSDL
-                //sach.Tensach = f["sTenSach"];
-                //sach.Mota = f["sMoTa"];
-                //sach.Ngaycapnhat = Convert.ToDateTime(f["dNgayCapNhat"]);
-                //sach.Soluongton = int.Parse(f["iSoLuong"]);
-                //sach.Giaban = decimal.Parse(f["mGiaBan"]);
-                //sach.MaCD = int.Parse(f["MaCD"]);
-                //sach.MaNXB = int.Parse(f["MaNXB"]);
-                //db.SACH.AddOrUpdate(sach);
-                //db.SaveChanges();
-                // Về lại trang Quản lý sách
+                
+                db.Doctor.AddOrUpdate(doctor);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(doctor);

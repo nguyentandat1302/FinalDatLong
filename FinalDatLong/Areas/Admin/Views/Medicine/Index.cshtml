@@ -5,132 +5,34 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách thuốc</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Màu nền xanh nhạt */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+<h2>Index</h2>
 
-        #drugList {
-            width: 80vw;
-            background-color: #ffffff; /* Màu nền trắng */
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+<p>
+    @Html.ActionLink("Create new ", "Add", null, new { @class = "btn btn-outline-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameMidecine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameMidecine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            <a href="@Url.Action("Delete", new { id = item.IDMedicine })" class="btn btn-outline-danger">Delete</a>
+        </td>
+    </tr>
+}
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #4caf50; /* Màu xanh lá cây */
-            color: white;
-        }
-
-        input[type="text"] {
-            padding: 8px;
-            width: calc(100% - 16px); /* Tính toán chiều rộng chính xác */
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-
-        button {
-            background-color: #4caf50; /* Màu xanh lá cây */
-            color: white;
-            padding: 8px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-            button:hover {
-                background-color: #45a049; /* Màu xanh lá cây đậm hơn khi hover */
-            }
-
-        .delete-btn {
-            background-color: #f44336; /* Màu đỏ */
-            color: white;
-            padding: 6px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-            .delete-btn:hover {
-                background-color: #d32f2f; /* Màu đỏ đậm hơn khi hover */
-            }
-    </style>
-</head>
-<body>
-    <div id="drugList">
-        <h2>Drug List</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Drug Name</th>
-                    <th>Drug Type</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="drugTableBody"></tbody>
-        </table>
-
-        <label for="drugName">Drug Name:</label>
-        <input type="text" id="drugName" placeholder="Enter drug name">
-
-        <label for="drugType">Drug Type:</label>
-        <input type="text" id="drugType" placeholder="Enter drug type">
-
-        <button onclick="addDrug()">Add Drug</button>
-    </div>
-
-
-    <script>
-        function addDrug() {
-            var drugName = document.getElementById('drugName').value;
-            var drugType = document.getElementById('drugType').value;
-
-            if (drugName !== '' && drugType !== '') {
-                var table = document.getElementById('drugTableBody');
-                var newRow = table.insertRow(table.rows.length);
-                var cell1 = newRow.insertCell(0);
-                var cell2 = newRow.insertCell(1);
-                var cell3 = newRow.insertCell(2);
-
-                cell1.innerHTML = drugName;
-                cell2.innerHTML = drugType;
-                cell3.innerHTML = '<button class="delete-btn" onclick="deleteDrug(this)">Xóa</button>';
-
-                document.getElementById('drugName').value = '';
-                document.getElementById('drugType').value = '';
-            }
-        }
-
-        function deleteDrug(row) {
-            var index = row.parentNode.parentNode.rowIndex;
-            document.getElementById('drugTableBody').deleteRow(index);
-        }
-    </script>
-</body>
-</html>
+</table>

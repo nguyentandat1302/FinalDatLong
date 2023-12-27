@@ -135,6 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
     <Compile Include="Areas\Admin\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Admin\Controllers\MedicineController.cs" />
     <Compile Include="Areas\Admin\Controllers\TreatmentController.cs" />
@@ -151,13 +152,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202312121637084_qetrt.cs" />
-    <Compile Include="Migrations\202312121637084_qetrt.designer.cs">
-      <DependentUpon>202312121637084_qetrt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202312251758346_dfgj.cs" />
-    <Compile Include="Migrations\202312251758346_dfgj.designer.cs">
-      <DependentUpon>202312251758346_dfgj.cs</DependentUpon>
+    <Compile Include="Migrations\202312262159184_dasdsa.cs" />
+    <Compile Include="Migrations\202312262159184_dasdsa.designer.cs">
+      <DependentUpon>202312262159184_dasdsa.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -215,7 +212,6 @@
     <Content Include="Areas\Admin\Views\Doctor\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Doctor\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Doctor\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Doctor\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Add.cshtml" />
@@ -226,7 +222,13 @@
     <Content Include="Areas\Admin\Views\Patient\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Patient\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Feedback\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Feedback\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Treatment\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Doctor\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Medicine\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Medicine\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Medicine\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Booking\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -275,7 +277,6 @@
     <Content Include="Views\User\Feedback.cshtml" />
     <Content Include="Views\User\ViewFeedback.cshtml" />
     <Content Include="Views\Booking\PatientProfile.cshtml" />
-    <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
     <Content Include="Views\User\CurrentPassword.cshtml" />
   </ItemGroup>
@@ -311,11 +312,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202312121637084_qetrt.resx">
-      <DependentUpon>202312121637084_qetrt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202312251758346_dfgj.resx">
-      <DependentUpon>202312251758346_dfgj.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202312262159184_dasdsa.resx">
+      <DependentUpon>202312262159184_dasdsa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
