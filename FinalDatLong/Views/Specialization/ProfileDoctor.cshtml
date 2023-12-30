@@ -1,0 +1,37 @@
+﻿@model FinalDatLong.Models.Doctor
+
+@{
+    ViewBag.Title = "ProfileDoctor";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+}
+
+<h2 class="text-center">ProfileDoctor</h2>
+
+<div class="text-center">
+    <div class="col-8 mx-auto">
+        <div class="profile-img">
+            <img src="@Model.Avatar" style="width: 200px; height: 200px" />
+        </div>
+
+        <div class="profile-head">
+            <h3>
+                @Model.FullName
+            </h3>
+        </div>
+
+        <div class=" text-center">
+            <div class="profile-work text-center">
+                <h5>Introduction: @Model.Introduction</h5>
+                <p>Specialization: @Model.Specialization</p>
+                <p>Email: @Model.Email</p>
+                <p>Phone: @Model.Phone</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p class="text-center">
+    <a class="btn success" href="@Url.Action("Create", "Specialization",new {id = Model.IDDoctor})">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></a>
+    |
+    @Html.ActionLink("Back to List", "Khoa")
+</p>

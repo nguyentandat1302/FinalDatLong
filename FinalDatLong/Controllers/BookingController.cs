@@ -1,7 +1,6 @@
 ﻿using FinalDatLong.Models;
 using SachOnline;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.IO;
@@ -16,11 +15,7 @@ namespace FinalDatLong.Controllers
     {
         // GET: Booking
         Model1 db = new Model1();
-        //public ActionResult Error()
-        //{
-        //    // Logic xử lý khi có lỗi
-        //    return View();
-        //}
+       
         public ActionResult Index()
         {
             return View();
@@ -62,57 +57,52 @@ namespace FinalDatLong.Controllers
         {
             return PartialView();
         }
-        [HttpGet]
-        public ActionResult ProfileDoctor(int id)
-        {
-            var doctor = db.Doctor.SingleOrDefault(n => n.IDDoctor == id);
-            Booking Booking = new Booking();
-            if (doctor == null)
-            {
-                Response.StatusCode = 404;
-                return null;
-            }
-            
-            return View(doctor);
-        }
+        //public ActionResult ProfileDoctor(int id)
+        //{
+        //    var doctor = db.Doctor.FirstOrDefault(n => n.IDDoctor == id);
+        //    return PartialView(doctor);
+        //}
 
-        [HttpPost]
-        public ActionResult ProfileDoctor(int id ,FormCollection f)
-        {
-            Booking Booking = new Booking();
-            var doctor = db.Doctor.Find(id);
+        // em new booking o day 
+        //Dung get o tren em khai bao get r ma thay => 2 phuong thuc cung get phai khac nhau ve ten pt hoac tham so
+        //get
+        //public ActionResult ProfileDoctor2(int id ,FormCollection f)
+        //{
+        //    //Em khai bao id ma khi goi truyen vao IDDoctor nen se ko goi method nay
+        //    Booking Booking = new Booking();
+        //    var doctor = db.Doctor.Find(id);
 
-            if (doctor == null)
-            {
-                return HttpNotFound();
-            }
+        //    if (doctor == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
 
-            if (Session["UserName"] != null)
-            {
-                var patient = (Patient)Session["UserName"];
-                // Lấy thông tin hồ sơ từ cơ sở dữ liệu dựa trên IDPatient
+        //    if (Session["UserName"] != null)
+        //    {
+        //        var patient = (Patient)Session["UserName"];
+        //        // Lấy thông tin hồ sơ từ cơ sở dữ liệu dựa trên IDPatient
 
-                if (patient != null)
-                {
-                    Booking.Patient = patient;
-                    Booking.IDPatient = patient.IDPatient;
-                }
-                else
-                {
-                    return RedirectToAction("Error");
-                }
-            }
-            
-            Booking.IDDoctor = id;
-            Booking.Doctor = doctor;
+        //        if (patient != null)
+        //        {
+        //            Booking.Patient = patient;
+        //            Booking.IDPatient = patient.IDPatient;
+        //        }
+        //        else
+        //        {
+        //            return RedirectToAction("Error");
+        //        }
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                db.Booking.Add(Booking);
-                db.SaveChanges();
-            }
-            return View();
-        }
+        //    Booking.IDDoctor = id;
+        //    Booking.Doctor = doctor;
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Booking.Add(Booking);
+        //        db.SaveChanges();
+        //    }
+        //    return View();
+        //}
 
 
 

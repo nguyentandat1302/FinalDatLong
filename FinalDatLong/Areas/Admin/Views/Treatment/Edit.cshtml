@@ -4,8 +4,7 @@
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,6 +90,7 @@
     </style>
 </head>
 <body>
+    <h2>Edit</h2>
     <div class="detail-container">
         <div class="profile-column">
             <h2>Patient Profile</h2>
@@ -112,64 +112,66 @@
                 @Model.Patient.PhoneNumber
             </div>
         </div>
-
         <div class="detail-column">
-            <h2>Edit Treatment</h2>
-            <div>
-                <span class="detail-label">Description:</span>
-                <textarea id="Description" placeholder="Enter treatment description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
-            </div>
-            <div>
-                <span class="detail-label">Treatment Description:</span>
-                <textarea id="TreatmentDescription" placeholder="Enter detailed treatment information">Additional details about the treatment.</textarea>
-            </div>
-            <div>
-                <span class="detail-label">Medications:</span>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Dosage</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="MedicationTableBody">
-                        <tr>
-                            <td>1</td>
-                            <td>Medication 1</td>
-                            <td><textarea>Dosage 1</textarea></td>
-                            <td><button onclick="deleteMedication(1)">Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Medication 2</td>
-                            <td><textarea>Dosage 2</textarea></td>
-                            <td><button onclick="deleteMedication(2)">Delete</button></td>
-                        </tr>
-                        <!-- Thêm các dòng khác nếu cần -->
-                    </tbody>
-                </table>
-            </div>
-            <button class="save-button" onclick="saveTreatment()">Save Treatment</button>
-            <button class="back-button" onclick="goBack()">Back</button>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Treatment</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.IDTreatment)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IDDoctor, "IDDoctor", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.IDDoctor, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.IDDoctor, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.IDPatient, "IDPatient", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.IDPatient, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.IDPatient, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TreatmentDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TreatmentDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TreatmentDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-primary " onclick="saveTreatment()" />
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
     </div>
 
     <script>
-function goBack() {
-            // Thêm logic để quay lại trang trước đó hoặc đóng cửa sổ thoáng
-            window.history.back();
-        }
-
-        function saveTreatment() {
+    function saveTreatment() {
             // Thêm logic để lưu thông tin điều trị đã chỉnh sửa
             alert("Treatment saved!");
         }
-
-        function deleteMedication(medicationId) {
-            // Thêm logic để xóa thuốc khỏi danh sách
-            alert("Medication " + medicationId + " deleted!");
-        }</script>
+    </script>
 </body>
-</html>

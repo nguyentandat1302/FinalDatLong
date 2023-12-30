@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<FinalDatLong.Models.Booking>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
 @{
     ViewBag.Title = "Index";
@@ -7,9 +8,7 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -19,7 +18,7 @@
             Patient
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Accept)
+            Status
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -60,8 +59,16 @@
             @Html.DisplayFor(modelItem => item.Datetime)
         </td>
         <td>
-            <button class="btn btn-outline-primary">Accept</button> ||
-            <button class="btn btn-outline-danger">Refuse</button>
+            @*Doi sang hyperlink moi goi 2 action khac nhau ko dung form => goi action erea nen phai khai bao them*@
+            @if (item.Accept != true)
+            {
+                <a href="@Url.Action("Accept","AcceptBooking", new {Area = "Admin", id = item.IDBooking})" class="btn btn-outline-primary">Accept</a>
+            }
+            else
+            {
+                <a href="@Url.Action("Refuse","AcceptBooking", new {Area = "Admin", id = item.IDBooking})" class="btn btn-outline-danger">Refuse</a>
+            }
+        <a href="@Url.Action("Detail","AcceptBooking", new { id = item.IDBooking })" class="btn btn-outline-warning"> Details</a>
         </td>
     </tr>
 }

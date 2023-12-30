@@ -68,15 +68,16 @@
                             <span class="font-weight-bold">@doctor.Specialization</span>
                         </div>
                     </td>
-                    <td>
+                    <td> 
                         <div class="p-2 d-flex flex-column">
                             <span class="font-weight-bold">@doctor.Phone</span>
                         </div>
                     </td>
                     <td>
                         <div>
+                           
                             <div id="Dakhoa">
-                                <a class="btn success" href="@Url.Action("ProfileDoctor", "Booking", new {IDDoctor = doctor.IDDoctor})">Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></a>
+                                <a class="btn success" href="@Url.Action("ProfileDoctor", "Specialization", new {id = doctor.IDDoctor})" >Đặt lịch hẹn <i class="bi bi-calendar2-week"></i></a>
                             </div>
                         </div>
 

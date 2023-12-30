@@ -21,7 +21,7 @@
     {
       "DisplayName": "Booking Management ",
       "Icon": "bi bi-journal-medical",
-      "Link": "/Admin/Booking/Index",
+      "Link": "/Admin/AcceptBooking/Index",
       "IsNested": false,
       "Sequence": 3,
       "UserRoles": [ "admin" ],

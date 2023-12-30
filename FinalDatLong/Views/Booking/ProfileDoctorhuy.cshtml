@@ -6,12 +6,9 @@
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
-<style>
-    /* Your styles here */
-</style>
-@using (Html.BeginForm("ProfileDoctor", "Booking", FormMethod.Post, new { id = Model.IDDoctor }))
+@*@using (Html.BeginForm("ProfileDoctor2", "Booking", new { id = Model.IDDoctor }))
 {
-    @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()*@
     <div class="container">
         <div class="row">
             <div class="col-4">
@@ -34,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-8">
+            @*<div class="col-8">
                 <div class="row">
                     <h3 class="text-center" style="padding: 5% 0 0 0">ĐẶT LỊCH KHÁM BỆNH</h3>
 
@@ -93,7 +90,8 @@
                     </div>
                     
                 </div>
-            </div>
+            </div>*@
+
         </div>
     </div>
-}
+@*}*@

@@ -3,10 +3,12 @@ using Microsoft.Ajax.Utilities;
 using SachOnline;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace FinalDatLong.Areas.Admin.Controllers
 {
@@ -55,11 +57,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
             }
             return View();
         }
-        public ActionResult Edit(int id)
-        {
-            var patient = db.Treatment.FirstOrDefault(s => s.IDPatient == id);
-            return View(patient);
-        }
+        
         [HttpGet]
         public ActionResult Delete(int id)
         {
@@ -88,6 +86,28 @@ namespace FinalDatLong.Areas.Admin.Controllers
 
 
             return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var patient = db.Treatment.FirstOrDefault(s => s.IDPatient == id);
+            if (patient == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(patient);
+        }
+        [HttpPost]
+        public ActionResult Edit(Treatment model)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Treatment.AddOrUpdate(model);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }

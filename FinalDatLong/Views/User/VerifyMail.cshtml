@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "VerifyMail";
+    Layout = "~/Views/Shared/LayoutNavbar.cshtml";
+}
+<style>
+    .jumbotron.text-center {
+        height: 17em;
+    }
+
+    input.form-control.col-md-6 {
+        width: 50%;
+        margin-right: 1em;
+        display: inline;
+    }
+
+    div#notes {
+        margin-top: 2%;
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    @@media (min-width: 991px) {
+        .col-md-9.col-sm-12 {
+            margin-left: 12%;
+        }
+    }
+</style>
+<div class="container">
+    <!-- Instructions -->
+    <div class="row">
+        <div class="alert alert-success col-md-12" role="alert" id="notes">
+            <h4>NOTES</h4>
+            <ul>
+                <li>If somehow, you did not receive the verification email then <a href="#">resend the verification email</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron text-center">
+                @if (!string.IsNullOrEmpty(ViewBag.Error))
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Error
+                    </div>
+                }
+
+                <h2>Enter the verification code sent to **************.</h2>
+                <form action="/User/VerifyMail" method="post" id="contact-form">
+                    <div class="col-md-8 col-sm-12 col-md-offset-2">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-lg" name="verifyCode" required placeholder="Enter verification code">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-4 col-sm-12">
+                        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Verify">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

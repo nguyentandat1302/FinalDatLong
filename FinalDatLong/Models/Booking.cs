@@ -9,6 +9,8 @@ namespace FinalDatLong.Models
     [Table("Booking")]
     public partial class Booking
     {
+        // bi loi lay c nay loi gi em IDBooking luc em tao ko tu dong tang 
+        //Em chay 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IDBooking { get; set; }

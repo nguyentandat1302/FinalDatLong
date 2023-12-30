@@ -135,7 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Admin\Controllers\BookingController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AcceptBookingController.cs" />
     <Compile Include="Areas\Admin\Controllers\FeedbackController.cs" />
     <Compile Include="Areas\Admin\Controllers\MedicineController.cs" />
     <Compile Include="Areas\Admin\Controllers\TreatmentController.cs" />
@@ -155,6 +155,10 @@
     <Compile Include="Migrations\202312262159184_dasdsa.cs" />
     <Compile Include="Migrations\202312262159184_dasdsa.designer.cs">
       <DependentUpon>202312262159184_dasdsa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312300557102_dsfs.cs" />
+    <Compile Include="Migrations\202312300557102_dsfs.designer.cs">
+      <DependentUpon>202312300557102_dsfs.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -215,7 +219,6 @@
     <Content Include="Areas\Admin\Views\Treatment\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Add.cshtml" />
-    <Content Include="Areas\Admin\Views\Treatment\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Doctor\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Patient\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Patient\Create.cshtml" />
@@ -228,7 +231,9 @@
     <Content Include="Areas\Admin\Views\Medicine\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Medicine\Add.cshtml" />
     <Content Include="Areas\Admin\Views\Medicine\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Booking\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AcceptBooking\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AcceptBooking\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Treatment\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -273,12 +278,15 @@
     <Content Include="Views\ALL\Instruction.cshtml" />
     <Content Include="Views\Booking\NewBooking.cshtml" />
     <Content Include="Views\Specialization\Khoa.cshtml" />
-    <Content Include="Views\Booking\ProfileDoctor.cshtml" />
+    <Content Include="Views\Booking\ProfileDoctorhuy.cshtml" />
     <Content Include="Views\User\Feedback.cshtml" />
     <Content Include="Views\User\ViewFeedback.cshtml" />
     <Content Include="Views\Booking\PatientProfile.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
     <Content Include="Views\User\CurrentPassword.cshtml" />
+    <Content Include="Views\User\VerifyMail.cshtml" />
+    <Content Include="Views\Specialization\ProfileDoctor.cshtml" />
+    <Content Include="Views\Specialization\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +322,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312262159184_dasdsa.resx">
       <DependentUpon>202312262159184_dasdsa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312300557102_dsfs.resx">
+      <DependentUpon>202312300557102_dsfs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -58,10 +58,11 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Avatar, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Avatar:</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Avatar, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
+                <img style="height:200px;width:150px" src="@Model.Avatar" alt="@Model.Avatar">
+                <input type="file" name="fFileUpload" />
+                @ViewBag.ThongBao
             </div>
         </div>
 
