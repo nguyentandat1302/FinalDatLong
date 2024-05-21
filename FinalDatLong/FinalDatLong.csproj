@@ -234,6 +234,8 @@
     <Content Include="Areas\Admin\Views\AcceptBooking\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AcceptBooking\Detail.cshtml" />
     <Content Include="Areas\Admin\Views\Treatment\Edit.cshtml" />
+    <None Include="Properties\PublishProfiles\datlatao1302-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\datlatao1302-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

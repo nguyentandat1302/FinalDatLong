@@ -53,10 +53,8 @@ namespace FinalDatLong.Areas.Admin.Controllers
                 booking.Accept = true;
                 db.SaveChanges();
 
-                // Send email to patient
                SendBookingConfirmationEmail(booking.Patient.Email, true);
 
-                // Additional logic if needed
             }
             else
             {
@@ -75,10 +73,8 @@ namespace FinalDatLong.Areas.Admin.Controllers
                 booking.Accept = false;
                 db.SaveChanges();
 
-                // Send email to patient
                SendBookingConfirmationEmail(booking.Patient.Email, false);
 
-                // Additional logic if needed
             }
             else
             {

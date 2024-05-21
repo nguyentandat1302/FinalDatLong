@@ -39,7 +39,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Add(Treatment model)
         {
-            var d = (Doctor)Session["Doctor"];
+            Doctor d = (Doctor)Session["Doctor"];
             model.IDDoctor = d.IDDoctor;
             
             var kh = db.Patient.FirstOrDefault(k => k.IDPatient == model.IDPatient);

@@ -59,7 +59,7 @@
             @Html.DisplayFor(modelItem => item.Datetime)
         </td>
         <td>
-            @*Doi sang hyperlink moi goi 2 action khac nhau ko dung form => goi action erea nen phai khai bao them*@
+          
             @if (item.Accept != true)
             {
                 <a href="@Url.Action("Accept","AcceptBooking", new {Area = "Admin", id = item.IDBooking})" class="btn btn-outline-primary">Accept</a>

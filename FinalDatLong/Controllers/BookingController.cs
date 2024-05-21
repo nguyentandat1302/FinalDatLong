@@ -128,7 +128,6 @@ namespace FinalDatLong.Controllers
             if (Session["UserName"] != null)
             {
                 var patient = (Patient)Session["UserName"];
-                // Lấy thông tin hồ sơ từ cơ sở dữ liệu dựa trên IDPatient
                 patient.MatKhauNL = patient.Password;
 
                 if (patient != null)
@@ -171,32 +170,6 @@ namespace FinalDatLong.Controllers
         }
 
 
-        //[HttpPost]
-        //[ValidateInput(false)]
-        //public ActionResult Edit(FormCollection f, HttpPostedFileBase fFileUpload)
-        //{
-        //    var patient = db.Patient.SingleOrDefault(n => n.IDPatient == int.Parse(f[""]));
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (fFileUpload != null)
-        //        {
-
-        //            var sFileName = Path.GetFileName(fFileUpload.FileName);
-
-        //            var path = Path.Combine(Server.MapPath("~/Images"), sFileName);
-        //            //Kiểm tra file đã tồn tại chưa
-        //            if (!System.IO.File.Exists(path))
-        //            {
-        //                fFileUpload.SaveAs(path);
-        //            }
-        //            patient.Avatar = sFileName;
-        //        }
-             
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(patient);
-        //}
 
 
 

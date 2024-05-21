@@ -161,12 +161,7 @@
 
                 </div>
             </div>
-            @*<div class="col-md-2">
-                @foreach (var item in Model)
-                {
-                    <a href="@Url.Action("Edit", new { id = item.IDPatient })" class="profile-edit-btn" name="btnAddMore">Edit Profile</a>
-                }
-            </div>*@
+           
         </div>
         <br />
         <hr />
@@ -193,7 +188,6 @@
                             <div class="col-md-6">
                                 @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
                                 @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                                @*<p>@Model.UserName</p>*@
                             </div>
                         </div>
                         <hr />

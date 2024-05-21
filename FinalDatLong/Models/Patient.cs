@@ -40,7 +40,6 @@
 
         [StringLength(255)]
         public string FullName { get; set; }
-
         [Required(ErrorMessage = "Email không được để trống")]
         [StringLength(100)]
         public string Email { get; set; }

@@ -45,7 +45,7 @@ namespace FinalDatLong.Areas.Admin.Controllers
 
                 db.Doctor.Add(model);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Menu");
             }
             return View();
         }
